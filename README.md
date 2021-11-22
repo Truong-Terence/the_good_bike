@@ -7,7 +7,7 @@ Projet de groupe avec :
  - [Quentin Lourenço](https://github.com/qlourenco)
  - [Clément Le Boulanger](https://github.com/ClementLeBoulanger)
 
-### Objectif
+### Objectifs
 1. `Setup` : [Notion](https://www.notion.so/Project-The-Good-Bike-c3ba94b93e4a4dfb9c55d8cdf3a5051f)
 2. `Rails` : New rails avec le template minimal du Wagon
 3. `GitHub`: Création d'un repo avec collaborateurs
