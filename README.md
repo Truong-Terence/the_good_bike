@@ -16,8 +16,8 @@ Projet de groupe avec :
 
 
 ### Comportement
-Il s'agit d'une marketplace de location de vélos.
-Un `user` (renter) peut payer pour louer un vélo sur un période donnée.
-Un `user` (owner) peut mettre en location un ou des vélos.
+Il s'agit d'une marketplace de location de vélos.  
+Un `user` (renter) peut payer pour louer un vélo sur un période donnée.  
+Un `user` (owner) peut mettre en location un ou des vélos.  
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
