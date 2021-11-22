@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_67cd1154-983d-4d84-aa30-58affd95693e",
+      "org_id": "user_c063a849-088d-429f-a124-e3c90cdbc9bb",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_67cd1154-983d-4d84-aa30-58affd95693e.git",
+      "name": "the_good_bike",
+      "alias": "the_good_bike"
+    }
+  ]
+}
