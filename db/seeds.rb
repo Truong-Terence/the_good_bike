@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts 'Creating Movies [...]'
+puts 'Creating users, bikes and bookings [...]'
 
 # -----------------  PASSWORDS : "secret"  ----------------- #
 
@@ -42,4 +42,4 @@ Booking.create(status: "pending", user_id: 2, bike_id: 4, start_at: "2001,4,5", 
 Booking.create(status: "pending", user_id: 3, bike_id: 5, start_at: "2001,3,7", end_at: "2001,3,8", total_price: 30)
 Booking.create(status: "pending", user_id: 3, bike_id: 6, start_at: "2001,1,9", end_at: "2001,1,11", total_price: 39)
 
-puts 'Movies are added !'
+puts 'Seeds are added !'
