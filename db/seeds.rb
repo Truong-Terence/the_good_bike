@@ -31,15 +31,15 @@ Bike.create(user_id: 3, name: "Btwin pliant", description: "Are you looking for 
 # https://contents.mediadecathlon.com/p2017018/k$444cb5b3ad0f72ff36ae12848571c706/sq/velo-pliant-a-assistance-electrique-tilt-500-bleu.jpg?format=auto&f=720x720
 Bike.create(user_id: 4, name: "Elops", description: "Escape to the city on a comfortable, safe and well-equipped Dutch bike! With its low frame, luggage rack, basket or even its dynamo, all your journeys become easier.", address: "44700, Orvault", price_per_day: 11, kind: "Dutch bike", size: "29 in")
 # https://contents.mediadecathlon.com/p1819326/k$98c36d9eacda925545daab704c623868/sq/velo-de-ville-elops-520-cadre-bas-bleu-jeans.jpg?format=auto&f=720x720
-Bike.create(user_id: 5, name: "NCM", description: "NCM Hamburg is the perfect example of classic style with a futuristic twist. A real ally on a daily basis!", address: "44100, Nantes", price_per_day: 16, kind: "Urban", size: "28 in")
+Bike.create(user_id: 4, name: "NCM", description: "NCM Hamburg is the perfect example of classic style with a futuristic twist. A real ally on a daily basis!", address: "44100, Nantes", price_per_day: 16, kind: "Urban", size: "28 in")
 # https://contents.mediadecathlon.com/m1198519/k$5e468c1d333fd187a015af983f05a91e/sq/velo-electrique-urbain-ncm-hamburg-28-250w-batterie-36v-13ah-468wh.jpg?f=960x960
 
 # 6 bookings
-Booking.create(status: "pending", user_id: 1, bike_id: 1, start_at: "2001,2,3", end_at: "2001,2,5", total_price: 30)
-Booking.create(status: "pending", user_id: 1, bike_id: 2, start_at: "2001,3,12", end_at: "2001,3,16", total_price: 65)
-Booking.create(status: "pending", user_id: 2, bike_id: 3, start_at: "2001,4,3", end_at: "2001,4,8", total_price: 36)
-Booking.create(status: "pending", user_id: 2, bike_id: 4, start_at: "2001,4,5", end_at: "2001,4,13", total_price: 180)
-Booking.create(status: "pending", user_id: 3, bike_id: 5, start_at: "2001,3,7", end_at: "2001,3,8", total_price: 30)
-Booking.create(status: "pending", user_id: 3, bike_id: 6, start_at: "2001,1,9", end_at: "2001,1,11", total_price: 39)
+Booking.create(status: "pending", user_id: 4, bike_id: 1, start_at: "2001,2,3", end_at: "2001,2,5", total_price: 30)
+Booking.create(status: "pending", user_id: 3, bike_id: 2, start_at: "2001,3,12", end_at: "2001,3,16", total_price: 65)
+Booking.create(status: "pending", user_id: 4, bike_id: 3, start_at: "2001,4,3", end_at: "2001,4,8", total_price: 36)
+Booking.create(status: "pending", user_id: 3, bike_id: 4, start_at: "2001,4,5", end_at: "2001,4,13", total_price: 180)
+Booking.create(status: "pending", user_id: 1, bike_id: 5, start_at: "2001,3,7", end_at: "2001,3,8", total_price: 30)
+Booking.create(status: "pending", user_id: 2, bike_id: 6, start_at: "2001,1,9", end_at: "2001,1,11", total_price: 39)
 
 puts 'Seeds are added !'
