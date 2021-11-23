@@ -22,6 +22,8 @@ class BookingsController < ApplicationController
   end
 
   def cancel
+    @booking.status = "Cancel"
+    redirect_to bookings
   end
 
   private
