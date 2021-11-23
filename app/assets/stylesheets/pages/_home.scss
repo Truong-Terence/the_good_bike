@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+.info{
+  max-width: 50%;
+  text-align: center;
+  padding-top: 40px;
+
+  p{
+    max-width: 70%;
+    margin: 0 auto;
+  }
+
+  .comments{
+    margin-top: 35px;
+
+    p{
+      margin-bottom: 15px;
+    }
+  }
+}

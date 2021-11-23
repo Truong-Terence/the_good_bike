@@ -1,8 +1,45 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container d-flex flex-wrap justify-content-between py-4">
+  <div class="searching-form w-50">
+    <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"p-4"} do |f| %>
+      <%= f.input :kind, placeholder: 'Whick bike you looking for?' %>
+      <%= f.input :address, placeholder: 'Where do you go ?'%>
+      <%= f.submit "Search", class:"btn btn-primary" %>
+    <% end %>
+  </div>
 
-<% if user_signed_in? %>
-  <p>Hello <%= current_user.email %></p>
-<% else %>
-  <p>Hello stranger</p>
-<% end %>
+  <div id="carouselExampleControls" class="carousel slide w-50" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag "banner-image.jpg", class:"d-block w-100"%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "bike.jpg", class:"d-block w-100"%>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag "solo-park.jpg", class:"d-block w-100"%>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <div class="home-map w-50">
+    <%= image_tag 'home-map.jpg', class:"d-block w-100"%>
+  </div>
+
+  <div class="info">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus dignissimos rerum atque, aut molestiae repellendus omnis rem culpa asperiores, neque architecto illum, cum reiciendis nostrum accusantium! Non sed possimus odio!</p>
+    <div class="comments">
+      <p><strong>Community comments</strong></p>
+      <span class="badge badge-pill badge-primary">Very usefull service</span>
+      <span class="badge badge-pill badge-primary">It saved my vacation</span>
+      <span class="badge badge-pill badge-primary">Amazing!</span>
+    </div>
+  </div>
+</div>
