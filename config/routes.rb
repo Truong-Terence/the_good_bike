@@ -6,4 +6,11 @@ Rails.application.routes.draw do
   patch 'bookings/:id/cancel', to: 'bookings#cancel'
 
   resources :bikes, only: [:index, :show]
+
+  namespace :owner do
+    resources :bikes, only: [:new, :create, :index, :edit, :update, :destroy]
+    resources :bookings, only: [:index]
+    patch 'bookings/:id/accept', to: 'bookings#accept'
+    patch 'bookings/:id/decline', to: 'bookings#decline'
+  end
 end
