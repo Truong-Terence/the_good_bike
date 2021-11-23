@@ -1,4 +1,5 @@
 require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -19,11 +20,11 @@ User.create(first_name: "Dupont", last_name: "Dupondt ", email: "dupont@gmail.co
 
 # 8 bikes : 2 bikes by owner
 file_rockrider = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664176/odmnkmnfscneyejbrmlx.jpg")
-file_rockrider_2 = URI.open("https://contents.mediadecathlon.com/p1424853/k$732b4318876b5a5d350496363762be64/sq/velo-vtt-st-100-jaune-275.jpg?f=960x960")
-file_rockrider_3 = URI.open("https://contents.mediadecathlon.com/p1424781/k$146b7588e1469fff90efd6371ea5db32/sq/velo-vtt-st-100-jaune-275.jpg?f=960x960")
+file_rockrider_2 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680699/velo-vtt-st-100-jaune-275_yxjmau.jpg")
+file_rockrider_3 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680745/velo-vtt-st-100-jaune-275_unpcyk.jpg")
 file_riverside = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665660/y4orm9s66vuyq2all9sc.jpg")
-file_riverside_2 = URI.open("https://contents.mediadecathlon.com/p1926677/k$d190a6a0171c30422632d2e8c5b7dc40/sq/velo-tout-chemin-electrique-riverside-500-e-gris-vert.jpg?f=960x960")
-file_riverside_3 = URI.open("https://contents.mediadecathlon.com/p2124051/k$743f237590563ca59b96fe46c51fadc6/sq/velo-tout-chemin-electrique-riverside-500-e-gris-vert.jpg?f=960x960")
+file_riverside_2 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680777/velo-tout-chemin-electrique-riverside-500-e-gris-vert_u6bopc.jpg")
+file_riverside_3 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680795/velo-tout-chemin-electrique-riverside-500-e-gris-vert_qejwi8.jpg")
 file_btwin = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665415/lqco8m8hiwyvjppshu1e.jpg")
 file_stilus = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664249/s6vxbksgnsmyihbkioyz.jpg")
 file_triban = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664257/x6cgkgwbnrpo2oyts0nn.jpg")
