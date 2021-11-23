@@ -1,0 +1,30 @@
+.card{
+  margin: auto, 0;
+  margin-top: 1rem;
+  &:hover{
+    border: 0.5px solid #ffb224;
+  }
+}
+
+.card-title{
+  color: hsl(0%, 0%, 6%);
+}
+
+.bike-description{
+  color: hsl(0%, 0%, 29%);
+}
+
+.price-card{
+  font-size: 20px;
+}
+
+.map{
+  background-color: gray;
+  height: 100vh;
+  top: 0;
+  position: sticky;
+  p{
+    display: flex;
+    justify-content: center;
+  }
+}

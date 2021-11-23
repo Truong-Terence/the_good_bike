@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.7'
 # Authentification Devise
 gem 'devise'
 # Use Active Storage variant
+# Geocoder
+gem 'geocoder'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb

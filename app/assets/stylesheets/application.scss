@@ -12,13 +12,8 @@
 @import "components/index";
 @import "pages/index";
 
-// google fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import "pages/bike_index";
 
-h1, h2, h3 {
-  font-family: 'Roboto:wght@300' ;
-}
-
-p, span{
-  font-family: 'Roboto:wght@100';
+body{
+  overflow-x: hidden;
 }
