@@ -1,22 +1,31 @@
-<div class="container d-flex flex-wrap justify-content-between py-4">
-  <div class="searching-form w-50">
-    <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"p-4"} do |f| %>
+<div class="container py-4">
+  <div class="searching-form w-100">
+    <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"p-4 form-inline"} do |f| %>
       <%= f.input :kind, placeholder: 'Whick bike you looking for?' %>
-      <%= f.input :address, placeholder: 'Where do you go ?'%>
+      <%= f.input :address, placeholder: 'Where do you go ?', class:'ml-5'%>
       <%= f.submit "Search", class:"btn btn-primary" %>
     <% end %>
   </div>
 
-  <div id="carouselExampleControls" class="carousel slide w-50" data-ride="carousel">
-    <div class="carousel-inner">
+  <div id="carouselExampleControls" class="carousel slide w-100" data-ride="carousel">
+    <div class="carousel-inner rounded">
       <div class="carousel-item active">
         <%= image_tag "banner-image.jpg", class:"d-block w-100"%>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Going outside for a chill ride</h5>
+        </div>
       </div>
       <div class="carousel-item">
-        <%= image_tag "bike.jpg", class:"d-block w-100"%>
+        <%= image_tag "thrill-bike.jpg", class:"d-block w-100"%>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Get some thrills</h5>
+        </div>
       </div>
       <div class="carousel-item">
         <%= image_tag "solo-park.jpg", class:"d-block w-100"%>
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Fun visit with friends </h5>
+        </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -29,8 +38,12 @@
     </a>
   </div>
 
-  <div class="home-map w-50">
-    <%= image_tag 'home-map.jpg', class:"d-block w-100"%>
+  <br>
+  <br>
+  <br>
+  <%# Put a map with all offers in france(exemple) without filter kind %>
+  <div class="home-map w-100">
+    <%= image_tag 'home-map.jpg', class:"d-block w-100 rounded"%>
   </div>
 
   <div class="info">
