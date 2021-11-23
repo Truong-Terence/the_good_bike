@@ -1,11 +1,30 @@
-<div class="all_bikes mt-2">
-  <div class="container">
-    <div class="card-group">
-      <div class="card">
-      </div>
+  <div class="row">
+    <div class="container col-6">
+      <% @bikes.each do |bike| %>
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <div class="d-flex p-1 justify-content-between">
+                  <h5 class="card-title"><%= bike.name %></h5>
+                  <p class="user-name card-text"><small class="text-muted">by <%= bike.user.first_name %> <%= bike.user.last_name.upcase %></small></p>
+                </div>
+                <p class="card-text bike-description"><%= bike.description %></p>
+                <div class="price-card d-flex flex-row-reverse">
+                  <%= link_to "view more", bike_path(bike), class: "btn btn-sm btn-info" %>
+                  <p class="m-0 pr-3"><%= bike.price_per_day %>€/Day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="map col-5">
+      <p>~~~~~~~~~~~map~~~~~~~~~~~</p>
     </div>
   </div>
-
-  <div class="map">
-  </div>
-</div>
