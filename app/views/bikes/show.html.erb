@@ -2,20 +2,40 @@
   <div class="col-md-7 content-left d-flex justify-content-center">
     <div class="bike_card shadow">
       <div class="thumbnail_bike">
-        PHOTO
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @bike.photos[0].key, crop: :fill %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @bike.photos[1].key, crop: :fill %>
+            </div>
+            <div class="carousel-item">
+              <%= cl_image_tag @bike.photos[2].key, crop: :fill %>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div>
       </div>
       <div class="details_bike p-3 d-flex flex-column justify-content-center border-top">
-        <span class="d-flex justify-content-between align-items-center mb-3"><h2><strong><%= @bike.name %></strong></h2> <p><strong><%= @bike.price_per_day %>€</strong>/Day</p></span>
-          <p><strong class="text-info">Description : </strong><%= @bike.description %></p>
-          <p><strong class="text-info">Kind : </strong><%= @bike.kind %></p>
-        <p><strong class="text-info">Size : </strong><%= @bike.size %></p>
-        <p><strong class="text-info">Address : </strong><%= @bike.address %></p>
-        <p><strong class="text-info">Contact : </strong><%= @bike.user.email %></p>
+        <span class="d-flex align-item-center"><h4><strong><%= @bike.name %></strong></h4>&nbsp;&nbsp;<p><%= @bike.kind %></p></span>
+        <p><i class="fas fa-level-up-alt"></i>&nbsp;<%= @bike.size %>ch</p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @bike.address %></p>
+        <h3 class="font-weight-bolder text-info"><strong><%= @bike.price_per_day %>€</strong> / day</h3>
+        <p><%= @bike.description %></p>
+
       </div>
       <div class="bookings_bike border-top p-3 align-items-start justify-content-start d-flex flex-column">
         <h4>Booking this bike</h4>
 
-        <%= simple_form_for @bike.bookings.new do |f| %>
+        <%= simple_form_for [@bike, @bike.bookings.new] do |f| %>
           <div class="form-group">
             <%= f.input :start_at, class:"form-control" %>
             <%= f.input :end_at, class:"form-control" %>

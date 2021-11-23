@@ -19,21 +19,19 @@
   overflow: hidden;
   .thumbnail_bike {
     width: 100%;
-    height: 45vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    img {
+      width: 100%;
+    }
   }
   .details_bike {
     width: 100%;
-    height: 35vh;
     span p {
       font-size: 20px;
     }
   }
     .bookings_bike {
     width: 100%;
-    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
