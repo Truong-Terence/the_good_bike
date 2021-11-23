@@ -4,7 +4,30 @@
       <div class="thumbnail_bike">
         PHOTO
       </div>
-      <div class="details_bike">
+      <div class="details_bike p-3 d-flex flex-column justify-content-center border-top">
+        <span class="d-flex justify-content-between align-items-center mb-3"><h2><strong><%= @bike.name %></strong></h2> <p><strong><%= @bike.price_per_day %>€</strong>/Day</p></span>
+          <p><strong class="text-info">Description : </strong><%= @bike.description %></p>
+          <p><strong class="text-info">Kind : </strong><%= @bike.kind %></p>
+        <p><strong class="text-info">Size : </strong><%= @bike.size %></p>
+        <p><strong class="text-info">Address : </strong><%= @bike.address %></p>
+        <p><strong class="text-info">Contact : </strong><%= @bike.user.email %></p>
+      </div>
+      <div class="bookings_bike border-top p-3 align-items-start justify-content-start d-flex flex-column">
+        <h4>Booking this bike</h4>
+
+        <%= simple_form_for @bike.bookings.new do |f| %>
+          <div class="form-group">
+            <%= f.input :start_at, class:"form-control" %>
+            <%= f.input :end_at, class:"form-control" %>
+            <%= link_to "Back to Home", bikes_path, class:"btn btn-info btn-sm mt-4"%>
+            <%= f.submit "Booking this bike !", class: "btn btn-info btn-sm mt-4"%>
+          </div>
+        <% end %>
+
+
+
+
+
 
       </div>
     </div>
