@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -16,23 +17,41 @@ User.create(first_name: "Professor", last_name: "Tournesol", email: "proftournes
 User.create(first_name: "Dupont", last_name: "Dupondt ", email: "dupont@gmail.com", password: "secret")
 # Plus the four of us as renters
 
+# TODO: REALS ADDRESSES FOR BIKES
+# TODO: cloudinary Seeds images
 # 8 bikes : 2 bikes by owner
-Bike.create(user_id: 1, name: "Rockrider", description: "Designed for your first mountain biking tours, in dry weather, up to 1h30.", address: "44100, Nantes" , price_per_day: 10 , kind: "Mountain bike" , size: "27,5 in" )
-# https://contents.mediadecathlon.com/p1276519/k$13d043f6eb2db637f37478db517dbb67/sq/velo-vtt-st-100-gris-275.jpg?format=auto&f=720x720
-Bike.create(user_id: 1, name: "Riverside", description: "Pace your walks with ease! Thanks to the electric assistance.", address: "44200 Nantes", price_per_day: 13, kind: "Electric" , size: "27,5 in" )
-# https://contents.mediadecathlon.com/p1922090/k$805ed784f8e4ec853c5b9939e4f67366/sq/velo-tout-chemin-electrique-riverside-500-e-gris-vert.jpg?format=auto&f=720x720
-Bike.create(user_id: 2, name: "Btwin", description: "Mountain bike for children from 9 to 12 years old.", address: "44200, Nantes", price_per_day: 6, kind: "Mountain bike", size: "24 in")
-# https://contents.mediadecathlon.com/p1732642/k$da7d34b23236655c16daa6d6d25d4511/sq/vtt-enfant-rockrider-st-500-24-pouces-9-12-ans-jaune-fluo.jpg?format=auto&f=720x720
-Bike.create(user_id: 2, name: "Stilus", description: "This electric mountain bike is designed for ALL TERRAIN MOUNTAIN treks.", address: "44300, Nantes", price_per_day: 20, kind: "Electric mountain bike", size: "29 in")
-# https://contents.mediadecathlon.com/p2094399/k$e75ab76eecad855dd8f54d02fd69ef1d/sq/velo-vtt-electrique-e-st-stilus-29.jpg?format=auto&f=720x720
-Bike.create(user_id: 3, name: "Triban", description: "Road bike for your regular outings. It will guarantee you uncompromising comfort to ride further, more often.", address: "44800, Saint-Herblain", price_per_day: 15, kind: "Road bike", size: "27 in")
-# https://contents.mediadecathlon.com/p1614865/k$adcb5aee7ea52acabeb6fa29f077608d/sq/triban-rc500-flatbar.jpg?format=auto&f=720x720
-Bike.create(user_id: 3, name: "Btwin pliant", description: "Are you looking for an electric bike that is easy to take with you? The TILT 500 E can be stored in your car trunk and will accompany you on your week and weekend outings up to 35 km.", address: "44000, Nantes", price_per_day: 13, kind: "Electrical", size: "25 in")
-# https://contents.mediadecathlon.com/p2017018/k$444cb5b3ad0f72ff36ae12848571c706/sq/velo-pliant-a-assistance-electrique-tilt-500-bleu.jpg?format=auto&f=720x720
-Bike.create(user_id: 4, name: "Elops", description: "Escape to the city on a comfortable, safe and well-equipped Dutch bike! With its low frame, luggage rack, basket or even its dynamo, all your journeys become easier.", address: "44700, Orvault", price_per_day: 11, kind: "Dutch bike", size: "29 in")
-# https://contents.mediadecathlon.com/p1819326/k$98c36d9eacda925545daab704c623868/sq/velo-de-ville-elops-520-cadre-bas-bleu-jeans.jpg?format=auto&f=720x720
-Bike.create(user_id: 4, name: "NCM", description: "NCM Hamburg is the perfect example of classic style with a futuristic twist. A real ally on a daily basis!", address: "44100, Nantes", price_per_day: 16, kind: "Urban", size: "28 in")
-# https://contents.mediadecathlon.com/m1198519/k$5e468c1d333fd187a015af983f05a91e/sq/velo-electrique-urbain-ncm-hamburg-28-250w-batterie-36v-13ah-468wh.jpg?f=960x960
+file_rockrider = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664176/odmnkmnfscneyejbrmlx.jpg")
+file_riverside = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665660/y4orm9s66vuyq2all9sc.jpg")
+file_btwin = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665415/lqco8m8hiwyvjppshu1e.jpg")
+file_stilus = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664249/s6vxbksgnsmyihbkioyz.jpg")
+file_triban = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664257/x6cgkgwbnrpo2oyts0nn.jpg")
+file_btwin_pliant = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664927/xvgckwyqfpprmbwe58yy.jpg")
+file_elops = URI.open("https://res.cloudinary.com/terence/image/upload/v1637668364/ROWER_MIEJSKI_ELEKTRYCZNY_ELOPS_940_E_WYSOKA_RAMA_dxmkvc.jpg")
+file_ncm = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665503/ihzktugtffrnnhtlc4d9.jpg")
+
+rockrider = Bike.create(user_id: 1, name: "Rockrider", description: "Designed for your first mountain biking tours, in dry weather, up to 1h30.", address: "44100, Nantes" , price_per_day: 10 , kind: "Mountain bike" , size: "27,5 in" )
+rockrider.photos.attach(io: file_rockrider, filename: 'rockrider.png', content_type: 'image/png')
+
+riverside = Bike.create(user_id: 1, name: "Riverside", description: "Pace your walks with ease! Thanks to the electric assistance.", address: "44200 Nantes", price_per_day: 13, kind: "Electric" , size: "27,5 in" )
+riverside.photos.attach(io: file_riverside, filename: 'riverside.png', content_type: 'image/png')
+
+btwin = Bike.create(user_id: 2, name: "Btwin", description: "Mountain bike for children from 9 to 12 years old.", address: "44200, Nantes", price_per_day: 6, kind: "Mountain bike", size: "24 in")
+btwin.photos.attach(io: file_btwin, filename: 'btwin.png', content_type: 'image/png')
+
+stilus = Bike.create(user_id: 2, name: "Stilus", description: "This electric mountain bike is designed for ALL TERRAIN MOUNTAIN treks.", address: "44300, Nantes", price_per_day: 20, kind: "Electric mountain bike", size: "29 in")
+stilus.photos.attach(io: file_stilus, filename: 'stilus.png', content_type: 'image/png')
+
+triban = Bike.create(user_id: 3, name: "Triban", description: "Road bike for your regular outings. It will guarantee you uncompromising comfort to ride further, more often.", address: "44800, Saint-Herblain", price_per_day: 15, kind: "Road bike", size: "27 in")
+triban.photos.attach(io: file_triban, filename: 'triban.png', content_type: 'image/png')
+
+btwin_pliant = Bike.create(user_id: 3, name: "Btwin pliant", description: "Are you looking for an electric bike that is easy to take with you? The TILT 500 E can be stored in your car trunk and will accompany you on your week and weekend outings up to 35 km.", address: "44000, Nantes", price_per_day: 13, kind: "Electrical", size: "25 in")
+btwin_pliant.photos.attach(io: file_btwin_pliant, filename: 'btwin_pliant.png', content_type: 'image/png')
+
+elops = Bike.create(user_id: 4, name: "Elops", description: "Escape to the city on a comfortable, safe and well-equipped Dutch bike! With its low frame, luggage rack, basket or even its dynamo, all your journeys become easier.", address: "44700, Orvault", price_per_day: 11, kind: "Dutch bike", size: "29 in")
+elops.photos.attach(io: file_elops, filename: 'elops.png', content_type: 'image/png')
+
+ncm = Bike.new(user_id: 4, name: "NCM", description: "NCM Hamburg is the perfect example of classic style with a futuristic twist. A real ally on a daily basis!", address: "44100, Nantes", price_per_day: 16, kind: "Urban", size: "28 in")
+ncm.photos.attach(io: file_ncm, filename: 'ncm.jpg', content_type: 'image/jpg')
 
 # 6 bookings
 Booking.create(status: "pending", user_id: 4, bike_id: 1, start_at: "2001,2,3", end_at: "2001,2,5", total_price: 30)

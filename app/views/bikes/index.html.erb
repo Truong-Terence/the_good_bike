@@ -1,2 +1,13 @@
 <h1>Bikes#index</h1>
 <p>Find me in app/views/bikes/index.html.erb</p>
+
+<%= bike = Bike.last %>
+<%= bike.name %>
+<%= bike.description %>
+<%= bike.address %> <br>
+<%= bike.photos.attached? %>
+
+
+<% bike.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
