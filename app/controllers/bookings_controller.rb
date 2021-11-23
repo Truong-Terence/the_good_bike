@@ -8,6 +8,15 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def create
+    @booking = Booking.new(booking_params)
+    @bike = Bike.find(params[:bike_id])
+    @booking.bike = @bike
+    @booking.user = current_user
+    @booking.save!
+
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -18,6 +27,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :user_id, :bike_id, :start_at, :end_at, :total_price)
+    params.require(:booking).permit(:bike_id, :start_at, :end_at)
   end
 end
