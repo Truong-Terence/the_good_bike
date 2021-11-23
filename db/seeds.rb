@@ -1,8 +1,4 @@
 require "open-uri"
-
-User.destroy
-Bike.destroy
-Booking.destroy
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -37,13 +33,13 @@ file_ncm = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665503
 
 rockrider = Bike.create(user_id: 1, name: "Rockrider", description: "Designed for your first mountain biking tours, in dry weather, up to 1h30.", address: "Rue de la Brianderie, 44100 Nantes" , price_per_day: 10 , kind: "Mountain bike" , size: "27,5 in" )
 rockrider.photos.attach(io: file_rockrider, filename: 'rockrider.png', content_type: 'image/png')
-rockrider.photos.attach(io: file_rockrider_2, filename: 'rockrider.png', content_type: 'image/png')
-rockrider.photos.attach(io: file_rockrider_3, filename: 'rockrider.png', content_type: 'image/png')
+rockrider.photos.attach(io: file_rockrider_2, filename: 'rockrider2.png', content_type: 'image/png')
+rockrider.photos.attach(io: file_rockrider_3, filename: 'rockrider3.png', content_type: 'image/png')
 
 riverside = Bike.create(user_id: 1, name: "Riverside", description: "Pace your walks with ease! Thanks to the electric assistance.", address: "Bd Gustave Roch, 44200 Nantes", price_per_day: 13, kind: "Electric" , size: "27,5 in" )
 riverside.photos.attach(io: file_riverside, filename: 'riverside.png', content_type: 'image/png')
-riverside.photos.attach(io: file_riverside_2, filename: 'riverside.png', content_type: 'image/png')
-riverside.photos.attach(io: file_riverside_3, filename: 'riverside.png', content_type: 'image/png')
+riverside.photos.attach(io: file_riverside_2, filename: 'riverside2.png', content_type: 'image/png')
+riverside.photos.attach(io: file_riverside_3, filename: 'riverside3.png', content_type: 'image/png')
 
 btwin = Bike.create(user_id: 2, name: "Btwin", description: "Mountain bike for children from 9 to 12 years old.", address: "Bd Victor Hugo, 44200 Nantes", price_per_day: 6, kind: "Mountain bike", size: "24 in")
 btwin.photos.attach(io: file_btwin, filename: 'btwin.png', content_type: 'image/png')
