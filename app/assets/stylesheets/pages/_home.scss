@@ -1,1 +1,44 @@
 // Specific CSS for your home-page
+.geo-form {
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+  background-color: rgb(238, 238, 151);
+  opacity: 0.2;
+  position: absolute;
+  top: 500px;
+  left: 30px;
+  z-index: -1;
+
+  &-2{
+    top: 80px;
+    left: 500px;
+  }
+
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  width: 28%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+   &:nth-child(1){
+     background-image: asset-url('find.jpg');
+   }
+   &:nth-child(2){
+     background-image: asset-url('calendar.jpg');
+   }
+   &:nth-child(3){
+     background-image: asset-url('ride.jpg');
+   }
+}
