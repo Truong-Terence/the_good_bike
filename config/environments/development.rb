@@ -32,7 +32,7 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Default URL options for development environment
-  # TODO:  In production, :host should be set to the actual host of your application.
+  # TODO:  In production.rb, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Don't care if the mailer can't send.

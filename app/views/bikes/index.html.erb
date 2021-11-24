@@ -2,8 +2,8 @@
   <div class="container col-6">
     <div>
       <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"d-flex justify-content-between p-4 form-inline"} do |f| %>
-          <%= f.input :kind, placeholder: 'Whick bike you looking for?', class: "flex-left" %>
-          <%= f.input :address, placeholder: 'Where do you go ?', class:'flex-right ml-5'%>
+          <%= f.input :kind, placeholder: 'Whick bike you looking for?', class: "flex-left", label:false %>
+          <%= f.input :address, placeholder: 'Where do you go ?', class:'flex-right ml-5', label:false%>
 	        <%= f.submit "Search", class:"btn btn-info mt-2" %>
       <% end %>
     </div>
@@ -33,7 +33,12 @@
     </div>
   </div>
 
-  <div class="map col-5">
-      <p>~~~~~~~~~~~map~~~~~~~~~~~</p>
+    <div class="col-5 content-right">
+        <div id="map"
+          style="width: 100%; height: 100%;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
   </div>
 </div>

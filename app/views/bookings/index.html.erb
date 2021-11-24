@@ -1,2 +1,25 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<div class="container border">
+  <h1 class="w-100 text-center">All your booking</h1>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <% if booking.user_id == current_user.id %>
+        <div class="card-product mt-4">
+          <%= cl_image_tag booking.bike.photos[0].key, crop: :fill %>
+          <div class="card-product-infos d-flex justify-content-between align-items-center w-100 h-100">
+            <div class="card-content-left ml-2">
+              <span class="d-flex align-item-center"><h3><strong class="text-info"><%= booking.bike.name %></strong></h3>&nbsp;&nbsp;<p><%= booking.bike.kind %></p></span>
+              <p class="booking_date">To be returned in <strong class="text-success"><%= (Date.today...booking.end_at).count %> days</strong></p>
+              <p><i class="fas fa-calendar-day mr-2"></i><%= booking.start_at %> to <%= booking.end_at %></p>
+              <p><i class="fas fa-map-marker-alt mr-2"></i><%= booking.bike.address %></p>
+              <p><i class="fas fa-at mr-2"></i><%= booking.bike.user.email %></p>
+              <p><i class="fas fa-sign-in-alt mr-2"></i><%= booking.status %></p>
+            </div>
+            <div class="card-content-right h-100 d-flex align-items-center">
+              <%= link_to icon('fas', 'times'), cancel_booking_path(booking), class: "btn btn-danger rounded-circle" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
