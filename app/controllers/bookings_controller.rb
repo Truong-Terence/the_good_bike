@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
     @booking.bike = @bike
     @booking.user = current_user
     @booking.save!
-
   end
 
   def show
