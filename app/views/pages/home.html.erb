@@ -1,4 +1,6 @@
+<%# Div en tant que background %>
 <div class="geo-form"></div>
+
 <div class="container py-4">
   <div class="searching-form w-100 d-flex justify-content-around">
     <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"p-4 form-inline"} do |f| %>
@@ -73,9 +75,13 @@
   <br>
 
   <%# Put a map with all offers in france(exemple) without filter kind %>
-  <div class="banner-map">
-    <%= image_tag "home-map.jpg", class:"w-100" %>
+  <div class="container">
+    <div id="map" class="banner-map w-100 h-25"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
   <hr>
 
   <div class="info d-flex justify-content-around">
