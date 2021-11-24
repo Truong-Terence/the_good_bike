@@ -1,5 +1,13 @@
-  <div class="row">
-    <div class="container col-6">
+<div class="row">
+  <div class="container col-6">
+    <div>
+      <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"d-flex justify-content-between p-4 form-inline"} do |f| %>
+          <%= f.input :kind, placeholder: 'Whick bike you looking for?', class: "flex-left" %>
+          <%= f.input :address, placeholder: 'Where do you go ?', class:'flex-right ml-5'%>
+	        <%= f.submit "Search", class:"btn btn-info mt-2" %>
+      <% end %>
+    </div>
+    <div>
       <% @bikes.each do |bike| %>
         <div class="card mb-3">
           <div class="row g-0">
@@ -23,8 +31,9 @@
         </div>
       <% end %>
     </div>
-
-    <div class="map col-5">
-        <p>~~~~~~~~~~~map~~~~~~~~~~~</p>
-      </div>
   </div>
+
+  <div class="map col-5">
+      <p>~~~~~~~~~~~map~~~~~~~~~~~</p>
+  </div>
+</div>
