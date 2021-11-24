@@ -55,7 +55,7 @@ stilus.photos.attach(io: file_stilus, filename: 'stilus.png', content_type: 'ima
 triban = Bike.create(user: tournesol, name: "Triban", description: "Road bike for your regular outings. It will guarantee you uncompromising comfort to ride further, more often.", address: "Rue Océane, 44800 Saint-Herblain", price_per_day: 15, kind: "Road bike", size: "27 in")
 triban.photos.attach(io: file_triban, filename: 'triban.png', content_type: 'image/png')
 
-btwin_pliant = Bike.create(user: tournesol, name: "Btwin pliant", description: "Are you looking for an electric bike that is easy to take with you? The TILT 500 E can be stored in your car trunk and will accompany you on your week and weekend outings up to 35 km.", address: "Rue Maréchal Joffre, 44000 Nantes", price_per_day: 13, kind: "Electrical", size: "25 in")
+btwin_pliant = Bike.create(user: tournesol, name: "Btwin pliant", description: "Are you looking for an electric bike that is easy to take with you? The TILT 500 E can be stored in your car trunk and will accompany you on your week and weekend outings up to 35 km.", address: "Rue Maréchal Joffre, 44000 Nantes", price_per_day: 13, kind: "Electric", size: "25 in")
 btwin_pliant.photos.attach(io: file_btwin_pliant, filename: 'btwin_pliant.png', content_type: 'image/png')
 
 elops = Bike.create(user: dupont, name: "Elops", description: "Escape to the city on a comfortable, safe and well-equipped Dutch bike! With its low frame, luggage rack, basket or even its dynamo, all your journeys become easier.", address: "Avenue Félix Vincent, 44700 Orvault", price_per_day: 11, kind: "Dutch bike", size: "29 in")
