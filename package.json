@@ -2,6 +2,7 @@
   "name": "the_good_bike",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^4.7.4",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -9,6 +10,7 @@
     "bootstrap": "4.6",
     "jquery": "^3.6.0",
     "mapbox-gl": "^2.6.1",
+    "places.js": "^1.19.0",
     "popper.js": "^1.16.1",
     "turbolinks": "^5.2.0"
   },
