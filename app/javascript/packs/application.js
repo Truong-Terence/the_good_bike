@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
-import { initAutocomplete } from '../plugins/initAutocomplete';
+// import { initAutocomplete } from '../plugins/initAutocomplete'; TODO:
 
 document.addEventListener('turbolinks:load', () => { initMapbox(); })
 

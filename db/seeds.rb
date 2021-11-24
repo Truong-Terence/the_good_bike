@@ -61,11 +61,11 @@ ncm = Bike.new(user_id: 4, name: "NCM", description: "NCM Hamburg is the perfect
 ncm.photos.attach(io: file_ncm, filename: 'ncm.jpg', content_type: 'image/jpg')
 
 # 6 bookings
-Booking.create(status: "pending", user_id: 4, bike_id: 1, start_at: "2001,2,3", end_at: "2001,2,5", total_price: 30)
-Booking.create(status: "pending", user_id: 3, bike_id: 2, start_at: "2001,3,12", end_at: "2001,3,16", total_price: 65)
-Booking.create(status: "pending", user_id: 4, bike_id: 3, start_at: "2001,4,3", end_at: "2001,4,8", total_price: 36)
-Booking.create(status: "pending", user_id: 3, bike_id: 4, start_at: "2001,4,5", end_at: "2001,4,13", total_price: 180)
-Booking.create(status: "pending", user_id: 1, bike_id: 5, start_at: "2001,3,7", end_at: "2001,3,8", total_price: 30)
-Booking.create(status: "pending", user_id: 2, bike_id: 6, start_at: "2001,1,9", end_at: "2001,1,11", total_price: 39)
+Booking.create(user_id: 4, bike_id: 1, start_at: "2001,2,3", end_at: "2001,2,5", total_price: 30)
+Booking.create(user_id: 3, bike_id: 2, start_at: "2001,3,12", end_at: "2001,3,16", total_price: 65)
+Booking.create(user_id: 4, bike_id: 3, start_at: "2001,4,3", end_at: "2001,4,8", total_price: 36)
+Booking.create(user_id: 3, bike_id: 4, start_at: "2001,4,5", end_at: "2001,4,13", total_price: 180)
+Booking.create(user_id: 1, bike_id: 5, start_at: "2001,3,7", end_at: "2001,3,8", total_price: 30)
+Booking.create(user_id: 2, bike_id: 6, start_at: "2001,1,9", end_at: "2001,1,11", total_price: 39)
 
 puts 'Seeds are added !'
