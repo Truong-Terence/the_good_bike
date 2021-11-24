@@ -17,6 +17,7 @@ class BookingsController < ApplicationController
     @booking.bike = @bike
     @booking.user = current_user
     @booking.save!
+    redirect_to bookings_path
   end
 
   def show
