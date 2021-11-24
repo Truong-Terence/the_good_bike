@@ -1,12 +1,14 @@
-<div class="container py-4 ">
-  <div class="searching-form w-100 d-flex justify-content-around position-relative">
-    <div class="geo-form"></div>
+<%# Div en tant que background %>
+<div class="geo-form"></div>
+
+<div class="container py-4">
+  <div class="searching-form w-100 d-flex justify-content-around">
     <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"p-4 form-inline"} do |f| %>
       <div>
-        <%= f.input :kind, placeholder: 'Whick bike you looking for?' %>
+        <%= f.input :kind, placeholder: 'Whick bike you looking for?', label: false %>
       </div>
       <div class="mx-5">
-        <%= f.input :address, placeholder: 'Where do you go ?', class:'ml-5'%>
+        <%= f.input :address, placeholder: 'Where do you go ?', label: false%>
       </div>
       <%= f.submit "Search", class:"btn btn-primary" %>
     <% end %>
@@ -46,20 +48,24 @@
   <br>
   <br>
 
+
+
+
   <div class="tuto text-center col-12 position-relative">
-    <div class="geo-form geo-form-2"></div>
     <h2>How it works</h2>
-    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
-    <p class="col-6 mx-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus obcaecati aliquam reprehenderit molestias modi sit nemo distinctio repellendus, fugit non.</p>
-    <div class="card-container d-flex justify-content-around">
-      <div class="card-category">
-        Find your bike
-      </div>
-      <div class="card-category">
-        Book it
-      </div>
-      <div class="card-category">
-        Ride it
+    <h6><strong>The good bike helps people to rent bike all over the world</strong></h6>
+    <p class="col-12 col-lg-7 mx-auto">The good bike bike rental and sharing service that provides a platform to connect bike owners with people looking to rent bike around the world. Through our service, owners list their bikes, renters search for a bike in whatever area they want, and complete the rental process easily through our web application</p>
+    <div class="card-container">
+      <div class="row">
+        <div class="card-category col-lg-4 col-12">
+          <%= link_to 'Find your bike', bikes_path %>
+        </div>
+        <div class="card-category col-lg-4 col-12">
+          <%= link_to 'Book it', '#' %>
+        </div>
+        <div class="card-category col-lg-4 col-12">
+          <%= link_to 'Ride it', '#' %>
+        </div>
       </div>
     </div>
   </div>
@@ -69,9 +75,13 @@
   <br>
 
   <%# Put a map with all offers in france(exemple) without filter kind %>
-  <div class="banner-map">
-    <%= image_tag "home-map.jpg", class:"w-100" %>
+  <div class="container">
+    <div id="map" class="banner-map w-100 h-25"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
   <hr>
 
   <div class="info d-flex justify-content-around">
