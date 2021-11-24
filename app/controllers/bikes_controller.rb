@@ -13,5 +13,13 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+
+    @markers = [
+      {
+        lat: @bike.latitude,
+        lng: @bike.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { bike: @bike })
+      }
+    ]
   end
 end
