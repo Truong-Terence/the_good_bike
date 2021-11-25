@@ -4,8 +4,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav navbar-nav mr-auto">
         <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link active" %>
+          <li class="nav-item active">
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Bookings", bookings_path, class: "nav-link" %>
@@ -27,3 +27,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'active_links.js' %>
