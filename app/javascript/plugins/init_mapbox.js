@@ -4,12 +4,20 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
+    const popup = new mapboxgl.Popup({ closeButton: false, closeOnMove: true}).setHTML(marker.info_window);
 
-    new mapboxgl.Marker()
-    .setLngLat([marker.lng, marker.lat])
-    .setPopup(popup)
-    .addTo(map);
+    // Create a HTML element for your custom marker
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundSize = 'contain';
+    element.style.width = '35px';
+    element.style.height = '35px';
+
+    new mapboxgl.Marker(element)
+      .setLngLat([marker.lng, marker.lat])
+      .setPopup(popup)
+      .addTo(map);
   });
 };
 

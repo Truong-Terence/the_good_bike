@@ -27,3 +27,14 @@
     border: solid rgb(160, 160, 160) 2px;
   }
 }
+
+.navbar-lewagon-pages {
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+  width: 100vw;
+  height: 45px;
+  a {
+    text-decoration: none;
+    color: #80817F;
+  }
+}
