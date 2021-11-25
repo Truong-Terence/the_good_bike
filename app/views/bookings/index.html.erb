@@ -13,10 +13,23 @@
               <p><i class="fas fa-calendar-day mr-2"></i><%= booking.start_at %> to <%= booking.end_at %></p>
               <p><i class="fas fa-map-marker-alt mr-2"></i><%= booking.bike.address %></p>
               <p><i class="fas fa-at mr-2"></i><%= booking.bike.user.email %></p>
-              <p><i class="fas fa-sign-in-alt mr-2"></i><%= booking.status %></p>
+              <p>
+                <% if booking.status == "Pending" %>
+                <i class="fas fa-hourglass-half mr-2"></i><%= booking.status %>
+                <% elsif booking.status == "Accepted"%>
+                <i class="far fa-check-circle mr-2"></i><%= booking.status %>
+                <% else booking.status == "Canceled"%>
+                <i class="far fa-times-circle mr-2"></i><%= booking.status %>
+                <% end %>
+              </p>
             </div>
             <div class="card-content-right h-100 d-flex align-items-center">
+              <% unless booking.status == "Canceled" %>
               <%= link_to icon('fas', 'times'), cancel_booking_path(booking), class: "btn btn-danger rounded-circle" %>
+              <% else %>
+              <%# TODO: edit update + modif icon %>
+              <%= link_to icon('fas', 'times'), cancel_booking_path(booking), class: "btn btn-success rounded-circle" %>
+              <% end %>
             </div>
           </div>
         </div>
