@@ -24,3 +24,13 @@
   position: relative;
   top: -52px;
 }
+
+.avatar {
+  padding: 1px;
+  border: solid rgb(160, 160, 160) 1px;
+  &:hover {
+    cursor: pointer;
+    padding: 0px;
+    border: solid rgb(160, 160, 160) 2px;
+  }
+}

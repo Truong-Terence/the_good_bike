@@ -2,52 +2,24 @@
 <div class="geo-form"></div>
 
 <div class="container py-4">
-  <div class="searching-form w-100 d-flex justify-content-around">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <h1  class="d-flex align-items-center">THE &nbsp; G<lottie-player class="my-lottie-logo" src="https://assets7.lottiefiles.com/packages/lf20_uvovx5gl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>D &nbsp; BIKE</h1>
+  <% end %>
+  <div class="searching-form d-flex justify-content-around">
     <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"p-4 form-inline"} do |f| %>
       <div>
         <%= f.input :kind, placeholder: 'Whick bike you looking for?', label: false %>
       </div>
-      <div class="mx-5">
+      <div class="mx-2">
         <%= f.input :address, placeholder: 'Where do you go ?', label: false%>
       </div>
-      <%= link_to 'Search', bikes_path, class:"btn btn-primary"%>
+      <%= link_to 'Search', bikes_path, class:"btn btn-info"%>
     <% end %>
   </div>
-  <div id="carouselExampleControls" class="carousel slide w-100" data-ride="carousel">
-    <div class="carousel-inner rounded">
-      <div class="carousel-item active">
-        <%= image_tag "banner-image.jpg", class:"d-block w-100"%>
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Fun visit with friends </h2>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "thrill-bike.jpg", class:"d-block w-100"%>
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Get some thrills</h2>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <%= image_tag "solo-park.jpg", class:"d-block w-100"%>
-        <div class="carousel-caption d-none d-md-block">
-          <h2>Going outside for a chill ride</h2>
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
   <br>
   <br>
   <br>
-
 
 
 
@@ -77,7 +49,7 @@
   <%# Put a map with all offers in france(exemple) without filter kind %>
   <div class="container">
     <div id="map"
-      style="width: 100%; height: 600px;"
+      style="width: 100%; height: 400px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
@@ -102,3 +74,4 @@
     </div>
   </div>
 </div>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

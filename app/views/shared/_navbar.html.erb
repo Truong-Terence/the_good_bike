@@ -1,17 +1,14 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <h1  class="d-flex">THE &nbsp; G<lottie-player class="my-lottie-logo" src="https://assets7.lottiefiles.com/packages/lf20_uvovx5gl.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>D &nbsp; BIKE</h1>
-  <% end %>
 
   <div class="d-flex justify-content-between">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="nav navbar-nav mr-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Bikes", bikes_path, class: "nav-link" %>
+            <%= link_to "Bookings", bookings_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://mystickermania.com/cdn/stickers/cartoons/sticker_5031-512x512.png?t=09102020", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -30,3 +27,4 @@
     </div>
   </div>
 </div>
+<%= javascript_pack_tag 'active_links.js' %>

@@ -1,14 +1,17 @@
 // Specific CSS for your home-page
 .geo-form {
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
   width: 100vw;
-  height: 800px;
-  background-color: rgb(255, 255, 176);
+  height: 250%;
+  background: linear-gradient(rgb(255, 255, 255), rgb(181, 216, 141));
   opacity: 0.2;
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.searching-form{
+  background-color: rgba(151, 196, 100, 0.089);
+  border-radius: 50px;
 }
 
 .card-category {
@@ -37,4 +40,8 @@
    &:nth-child(3){
      background-image: asset-url('ride.jpg');
    }
+}
+
+h1{
+  font-size: 100px;
 }
