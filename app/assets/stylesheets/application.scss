@@ -5,6 +5,15 @@
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
+@import "flatpickr/dist/flatpickr";
+// @import "flatpickr/dist/themes/airbnb";
+@import "flatpickr/dist/themes/confetti";
+// @import "flatpickr/dist/themes/dark";
+// @import "flatpickr/dist/themes/light";
+// @import "flatpickr/dist/themes/material_blue";
+// @import "flatpickr/dist/themes/material_green";
+// @import "flatpickr/dist/themes/material_orange";
+// @import "flatpickr/dist/themes/material_red";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';

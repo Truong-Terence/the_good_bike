@@ -8,27 +8,30 @@
       </div>
       <%= f.input :address, class:"form-control" %>
       <%= f.input :description, class:"form-control" %>
-        <%= f.input :price_per_day, class:"form-control" %>
-      <div class="d-flex justify-content-between">
-        <%= f.file_field :images, multiple: true %>
-        <%= f.submit "Create my bike !", class: "btn btn-info btn-sm ml-4"%>
+      <%= f.input :price_per_day, class:"form-control" %>
+      <div class="d-flex justify-content-between align-items-center">
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Create my bike !", class: "btn btn-info"%>
       </div>
     </div>
   <% end %>
 
   <div>
-      <% @owner_bikes.each do |bike| %>
+      <% @owner_bikes.each do |owner_bike| %>
         <div class="card mb-3">
           <div class="row g-0">
+            <div class="col-md-4">
+              <%= cl_image_tag owner_bike.photos[0].key, height: 300, width: 400, crop: :fill, class: "img-fluid rounded-start" %>
+            </div>
             <div class="col-md-8">
               <div class="card-body">
                 <div class="d-flex p-1 justify-content-between">
-                  <h5 class="card-title"><%= bike.name %></h5>
-                  <p class="user-name card-text"><small class="text-muted">by <%= bike.user.first_name %> <%= bike.user.last_name.upcase %></small></p>
+                  <h5 class="card-title"><%= owner_bike.name %></h5>
+                  <p class="user-name card-text"><small class="text-muted">by <%= owner_bike.user.first_name %> <%= owner_bike.user.last_name.upcase %></small></p>
                 </div>
-                <p class="card-text bike-description"><%= bike.description %></p>
+                <p class="card-text bike-description"><%= owner_bike.description %></p>
                 <div class="price-card d-flex flex-row-reverse">
-                  <p class="m-0 pr-3"><%= bike.price_per_day %>€/Day</p>
+                  <p class="m-0 pr-3"><%= owner_bike.price_per_day %>€/Day</p>
                 </div>
               </div>
             </div>

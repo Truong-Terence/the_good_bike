@@ -2,7 +2,7 @@
   margin: auto, 0;
   margin-top: 1rem;
   &:hover{
-    border: 0.5px solid #ffb224;
+    border: 0.5px solid #FFB224;
   }
 }
 
@@ -12,14 +12,20 @@
 
 .bike-description{
   color: hsl(0%, 0%, 29%);
+  overflow: hidden;
+  text-overflow: Ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 20px;
+  max-height: 96px;
+  -webkit-line-clamp: 3
 }
 
 .price-card{
   font-size: 20px;
 }
 
-.map{
-  background-color: gray;
+#map{
   height: 100vh;
   top: 0;
   position: sticky;
@@ -27,4 +33,24 @@
     display: flex;
     justify-content: center;
   }
+}
+.my-form {
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+.my-form-button {
+  position: relative;
+  top: -1px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 12px;
+}
+.my-form-input {
+  position: relative;
+  display: inline-block;
+  border-style: none;
+  width: 100%;
+  padding: 25px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
 }

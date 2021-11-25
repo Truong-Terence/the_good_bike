@@ -22,20 +22,31 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-// External imports
-import "bootstrap";
+                          // External imports
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+// -------Bootstrap-------
+import "bootstrap";
+
 import { initMapbox } from '../plugins/init_mapbox';
 // import { initAutocomplete } from '../plugins/initAutocomplete'; TODO:
 
-document.addEventListener('turbolinks:load', () => { initMapbox(); })
+// -------Date Picker-------
+import { initTotalPrice } from '../components/date_picker';
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-
+// -------MapBox-------
 document.addEventListener('turbolinks:load', () => {
+
   // Call your functions here, e.g:
   // initSelect2();
   initUpdateNavbarOnScroll();
 });
+
+  initMapbox();
+  initTotalPrice();
+ })
+
+// -------FlatPickr-------
+import { initFlatpickr } from "../plugins/flatpickr";
+initFlatpickr();
+
