@@ -1,9 +1,16 @@
+
+<div class="row justify-content-md-center mt-5">
+  <div class="col-md-7 p-0 d-flex border">
+    <div class="content-img col-md-6">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <div class="w-100 content d-flex">
   <div class="col-md-7 content-left d-flex justify-content-center">
     <div class="bike_card shadow">
       <div class="thumbnail_bike">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
           <div class="carousel-inner">
             <div class="carousel-item active">
               <%= cl_image_tag @bike.photos[0].key, crop: :fill %>
@@ -26,15 +33,44 @@
             <span class="sr-only">Next</span>
           </button>
         </div>
+    </div>
+    <div class="content-right col-md-6 p-3">
+      <div class="content-name-price d-flex justify-content-between border-bottom">
+        <h2><strong><%= @bike.name %></strong></h2>
+        <span class="d-flex align-items-end text-info"><h2><strong><%= @bike.price_per_day %>€</strong></h2>&nbsp;<h4>/day</h4></span>
       </div>
-      <div class="details_bike p-3 d-flex flex-column justify-content-center border-top">
-        <span class="d-flex align-item-center"><h4><strong><%= @bike.name %></strong></h4>&nbsp;&nbsp;<p><%= @bike.kind %></p></span>
-        <p><i class="fas fa-level-up-alt"></i>&nbsp;<%= @bike.size %>ch</p>
-        <p><i class="fas fa-map-marker-alt"></i> <%= @bike.address %></p>
-        <h3 class="font-weight-bolder text-info"><strong><%= @bike.price_per_day %>€</strong> / day</h3>
-        <p><%= @bike.description %></p>
+      <div class="content-description">
+        <div class="bike-rating d-flex w-100 pt-3">
+          <i class="fas fa-star text-info "></i>
+          <i class="fas fa-star text-info "></i>
+          <i class="fas fa-star text-info "></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <p class="m-0"><!--Here Rating-->3.9/5</p><%= link_to 'See all reviews' , bikes_path , class: "ml-3"%>
+        </div>
+        <div class="bike-description pt-3">
+          <p><%= @bike.description %></p>
+        </div>
+        <div class="bike-kind">
+          <span class="d-flex"><%= image_tag ("bike_show/biking-solid.svg"), height: "20px" %> <p class="ml-3"><%= @bike.kind %></p></span>
+        </div>
+        <div class="bike-size">
+          <span class="d-flex"><%= image_tag ("bike_show/arrows-alt-v-solid.svg"), height: "20px" %> <p class="ml-3"><%= @bike.size %>ch</p></span>
+        </div>
+        <div class="bike-address">
+          <span class="d-flex"><%= image_tag ("bike_show/map-marker-alt-solid.svg"), height: "20px" %> <p class="ml-3"><%= @bike.address %></p></span>
+        </div>
+        <div class="bike-options">
+          <span class="d-flex"><strong><p>Options : </p></strong>
+            <%= image_tag ("bike_show/protective.png"), height: "25px", class: "ml-3" %>
+            <%= image_tag ("bike_show/pump.png"), height: "25px", class: "ml-3" %>
+            <%= image_tag ("bike_show/child.png"), height: "25px", class: "ml-3" %>
+          </span>
+        </div>
 
       </div>
+
+      <div class="content-booking border">
       <div class="bookings_bike border-top p-3 align-items-start justify-content-start d-flex flex-column">
         <h4>Booking this bike</h4>
 
@@ -48,13 +84,7 @@
         <% end %>
 
       </div>
-    </div>
-  </div>
-  <div class="col-md-5 content-right">
-    <div id="map"
-        style="width: 100%; height: 100%;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
     </div>
   </div>
 </div>
