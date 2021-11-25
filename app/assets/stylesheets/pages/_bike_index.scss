@@ -2,7 +2,7 @@
   margin: auto, 0;
   margin-top: 1rem;
   &:hover{
-    border: 0.5px solid #ffb224;
+    border: 0.5px solid #FFB224;
   }
 }
 
@@ -12,6 +12,13 @@
 
 .bike-description{
   color: hsl(0%, 0%, 29%);
+  overflow: hidden;
+  text-overflow: Ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 20px;
+  max-height: 96px;
+  -webkit-line-clamp: 3
 }
 
 .price-card{
