@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { initMapbox } from '../plugins/init_mapbox';
 // import { initAutocomplete } from '../plugins/initAutocomplete'; TODO:
 
@@ -36,4 +37,5 @@ document.addEventListener('turbolinks:load', () => { initMapbox(); })
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initUpdateNavbarOnScroll();
 });

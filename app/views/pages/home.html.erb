@@ -1,46 +1,58 @@
 <%# Div en tant que background %>
 <div class="geo-form"></div>
 
-<div class="container py-4">
-  <%= link_to root_path, class: "navbar-brand" do %>
-    <h1  class="d-flex align-items-center">THE &nbsp; G<lottie-player class="my-lottie-logo" src="https://assets7.lottiefiles.com/packages/lf20_uvovx5gl.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>D &nbsp; BIKE</h1>
+<div class="container py-3">
+
+  <%= link_to root_path, class:"navbar-brand w-100" do %>
+    <h1  class="d-flex align-items-end">THE G<lottie-player class="my-lottie-logo" src="https://assets7.lottiefiles.com/packages/lf20_uvovx5gl.json"  background="transparent"  speed="1"  style="width: 320px; height: 320px;" loop autoplay ></lottie-player>D BIKE</h1>
   <% end %>
-  <div class="searching-form d-flex justify-content-around">
-    <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"p-4 form-inline"} do |f| %>
-      <div>
-        <%= f.input :kind, placeholder: 'Whick bike you looking for?', label: false %>
-      </div>
-      <div class="mx-2">
-        <%= f.input :address, placeholder: 'Where do you go ?', label: false%>
-      </div>
-      <%= link_to 'Search', bikes_path, class:"btn btn-info"%>
-    <% end %>
+
+  <div class="w-100 align-items-center mx-auto sticky">
+    <div class="searching-form d-flex w-100 justify-content-center">
+      <%= form_tag bikes_path, method: "GET", class:"p-3 form-inline" do %>
+        <div>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "my-form-input-kind form-control",
+          placeholder: "Find your bike" %>
+        </div>
+        <div>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "my-form-input-address form-control",
+          placeholder: "Where do you go ?" %>
+        </div>
+        <%=  submit_tag "Search", class:"btn btn-info"%>
+      <% end %>
+    </div>
   </div>
 
-  <br>
-  <br>
-  <br>
+  <div class="arrow-down bounce d-flex justify-content-center align-items-center"><i class="fas fa-caret-down"></i></div>
 
 
 
-  <div class="tuto text-center col-12 position-relative">
+
+  <div class="tuto text-center col-12 mt-4">
+  <div class="mt-5 mb-5">
     <h2>How it works</h2>
-    <h6><strong>The good bike helps people to rent bike all over the world</strong></h6>
-    <p class="col-12 col-lg-7 mx-auto">The good bike bike rental and sharing service that provides a platform to connect bike owners with people looking to rent bike around the world. Through our service, owners list their bikes, renters search for a bike in whatever area they want, and complete the rental process easily through our web application</p>
-    <div class="card-container">
+      <h6><strong>The good bike helps people to rent bike all over the world</strong></h6>
+      <p class="col-12 col-lg-7 mx-auto">The good bike bike rental and sharing service that provides a platform to connect bike owners with people looking to rent bike around the world. Through our service, owners list their bikes, renters search for a bike in whatever area they want, and complete the rental process easily through our web application</p>
+    </div>
+    <div class="container">
       <div class="row">
-        <div class="card-category col-lg-4 col-12">
-          <%= link_to 'Find your bike', bikes_path %>
+        <div class="card-category col-lg-4 col-12 ">
+          <%= link_to 'Find your bike', bikes_path%>
         </div>
-        <div class="card-category col-lg-4 col-12">
+        <div class="card-category col-lg-4 col-12 img">
           <%= link_to 'Book it', '#' %>
         </div>
-        <div class="card-category col-lg-4 col-12">
+        <div class="card-category col-lg-4 col-12 img">
           <%= link_to 'Ride it', '#' %>
         </div>
       </div>
     </div>
   </div>
+
   <br>
   <br>
   <br>
@@ -54,23 +66,29 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+</div>
 
-  <hr>
-
-  <div class="info d-flex justify-content-around">
-    <div class="rewards">
-      <h3>Our service is multi rewarded</h3>
-      <div class="badges">
-        <p>First place, new commer award</p>
-        <p>Most rised start up France</p>
-        <p>Favorite european application</p>
+<div class="footer d-flex justify-content-around">
+  <div class="container">
+    <div class="row">
+      <div class="logo col-lg-4 col-12 ">
+        <lottie-player class="my-lottie-logo" src="https://assets7.lottiefiles.com/packages/lf20_uvovx5gl.json"  background="transparent"  speed="0.5"  style="height: 150px;" loop autoplay ></lottie-player>
       </div>
-    </div>
-    <div class="comments">
-      <p><strong>Community comments</strong></p>
-      <span class="badge badge-pill badge-primary">Very usefull service</span>
-      <span class="badge badge-pill badge-primary">It saved my vacation</span>
-      <span class="badge badge-pill badge-primary">Amazing!</span>
+      <div class="col-lg-4 col-12" id="social-platforms">
+        <h3>Join us on</h3>
+        <a class="btn btn-icon btn-facebook" href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+        <a class="btn btn-icon btn-twitter" href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+        <a class="btn btn-icon btn-instagram" href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a>
+        <a class="btn btn-icon btn-pinterest" href="#"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
+      </div>
+      <div class="rewards col-lg-4 my-3 col-12 text-center">
+        <h3>Our service is multi rewarded</h3>
+        <div class="badges">
+          <p><i class="fas fa-award mr-2"></i>Most rised start up France</p>
+          <p><i class="fas fa-award mr-2"></i>First place, new commer award</p>
+          <p><i class="fas fa-award mr-2"></i>Favorite european application</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
