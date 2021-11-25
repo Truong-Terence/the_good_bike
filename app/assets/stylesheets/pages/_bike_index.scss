@@ -34,3 +34,23 @@
     justify-content: center;
   }
 }
+.my-form {
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+.my-form-button {
+  position: relative;
+  top: -1px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  padding: 12px;
+}
+.my-form-input {
+  position: relative;
+  display: inline-block;
+  border-style: none;
+  width: 100%;
+  padding: 25px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}

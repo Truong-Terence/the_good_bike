@@ -3,12 +3,21 @@ class BikesController < ApplicationController
   def index
     @bikes = Bike.all
 
+    # GEOBOX MAP & MARKERS
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
         lng: bike.longitude,
         info_window: render_to_string(partial: "info_window", locals: { bike: bike })
       }
+    end
+
+    # SEARCH FORM
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR address ILIKE :query OR kind ILIKE :query"
+      @bikes = Bike.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @bikes = Bike.all
     end
   end
 
