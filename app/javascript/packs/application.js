@@ -34,17 +34,16 @@ import { initMapbox } from '../plugins/init_mapbox';
 // -------Date Picker-------
 import { initTotalPrice } from '../components/date_picker';
 
-// -------MapBox-------
+// -------FlatPickr-------
+import { initFlatpickr } from "../plugins/flatpickr";
+
 document.addEventListener('turbolinks:load', () => {
 
   // Call your functions here, e.g:
   // initSelect2();
   initUpdateNavbarOnScroll();
-});
-
+  // -------MapBox-------
   initMapbox();
+  initFlatpickr();
   initTotalPrice();
-
-// -------FlatPickr-------
-import { initFlatpickr } from "../plugins/flatpickr";
-initFlatpickr();
+});
