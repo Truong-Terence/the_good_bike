@@ -1,6 +1,6 @@
 .content-img {
   width: 100%;
-  object-fit: cover;
+
   padding: 0;
   img {
     width: 100%;
@@ -8,4 +8,12 @@
   h2 {
     font-size: 32px !important;
   }
+  .carousel {
+    object-fit: cover;
+  }
 }
+.back_to_index {
+    position: absolute;
+    top: -30px;
+    left: 0;
+  }
