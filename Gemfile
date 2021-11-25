@@ -30,6 +30,16 @@ gem 'devise'
 gem 'geocoder'
 # gem 'image_processing', '~> 1.2'
 
+#     ------------SEARCH------------
+# PG SEARCH
+gem 'pg_search', '~> 2.3.0'
+# Elasticsearch
+gem 'elasticsearch', "< 7.14"
+gem 'searchkick', '~> 4.0'
+# Algolia
+gem "algoliasearch-rails"
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

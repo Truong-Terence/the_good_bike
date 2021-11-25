@@ -1,10 +1,12 @@
 <div class="row">
   <div class="container col-6">
-    <div>
-      <%= simple_form_for :search, url: root_path, method: "GET", html: {class:"d-flex justify-content-between p-4 form-inline"} do |f| %>
-          <%= f.input :kind, placeholder: 'Whick bike you looking for?', class: "flex-left", label:false %>
-          <%= f.input :address, placeholder: 'Where do you go ?', class:'flex-right ml-5', label:false%>
-	        <%= f.submit "Search", class:"btn btn-info mt-2" %>
+    <div class="my-form col-10">
+      <%= form_tag bikes_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "my-form-input form-control",
+          placeholder: "Find your bike" %>
+        <%= submit_tag "Search", class: "my-form-button btn btn-info" %>
       <% end %>
     </div>
     <div>
