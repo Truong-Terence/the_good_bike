@@ -23,18 +23,25 @@ dupont = User.create(first_name: "Dupont", last_name: "Dupondt ", email: "dupont
 # Plus the four of us as renters
 
 # 8 bikes : 2 bikes by owner
-file_rockrider = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664176/odmnkmnfscneyejbrmlx.jpg")
-file_rockrider_2 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680699/velo-vtt-st-100-jaune-275_yxjmau.jpg")
-file_rockrider_3 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680745/velo-vtt-st-100-jaune-275_unpcyk.jpg")
-file_riverside = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665660/y4orm9s66vuyq2all9sc.jpg")
-file_riverside_2 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680777/velo-tout-chemin-electrique-riverside-500-e-gris-vert_u6bopc.jpg")
-file_riverside_3 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637680795/velo-tout-chemin-electrique-riverside-500-e-gris-vert_qejwi8.jpg")
-file_btwin = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665415/lqco8m8hiwyvjppshu1e.jpg")
-file_stilus = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664249/s6vxbksgnsmyihbkioyz.jpg")
-file_triban = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664257/x6cgkgwbnrpo2oyts0nn.jpg")
-file_btwin_pliant = URI.open("https://res.cloudinary.com/terence/image/upload/v1637664927/xvgckwyqfpprmbwe58yy.jpg")
-file_elops = URI.open("https://res.cloudinary.com/terence/image/upload/v1637668364/ROWER_MIEJSKI_ELEKTRYCZNY_ELOPS_940_E_WYSOKA_RAMA_dxmkvc.jpg")
-file_ncm = URI.open("https://res.cloudinary.com/terence/image/upload/v1637665503/ihzktugtffrnnhtlc4d9.jpg")
+file_rockrider = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/9z84kzm9d7hukxscx39nw3f2xokn_frgesu.jpg")
+file_rockrider_2 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/x0dwoltv8xojk49369r3lzk91v3i_njllye.jpg")
+file_rockrider_3 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/z1zd3juq9r902heg3nnfh4ohp7gh_jgenmd.jpg")
+
+file_riverside = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/wx4qwh1vgw2fecgsyzj9w2odn5k8_k0mayv.jpg")
+file_riverside_2 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/yfcciqm89mkxnagyr1jhyhh1ex9h_piflqh.jpg")
+file_riverside_3 = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/pa9nmrux6sa0eyzzeyi6jh5tf0ou_xiasnc.jpg")
+
+file_btwin = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836222/The%20Good%20Bike/z9np2qwlzhki3jbzb7hz7elila9a_ppecmy.jpg")
+
+file_stilus = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/auudfj0v5qw80duiid7ufm1mzw3n_o1qkea.jpg")
+
+file_triban = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/61j6jof5v13yzf4rkqng46zql1jx_a0e8fr.jpg")
+
+file_btwin_pliant = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/2z33oj63gwrd0uukwhka236llhro_nrcltw.jpg")
+
+file_elops = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836221/The%20Good%20Bike/qtr00uxl4w2yhczg84axqfdhaww8_rldg3c.jpg")
+
+file_ncm = URI.open("https://res.cloudinary.com/terence/image/upload/v1637836623/The%20Good%20Bike/NCM-Prague-27.5in-White-side_s6w8ow.jpg")
 
 rockrider = Bike.create(user: tintin, name: "Rockrider", description: "Designed for your first mountain biking tours, in dry weather, up to 1h30.", address: "Rue de la Brianderie, 44100 Nantes" , price_per_day: 10 , kind: "Mountain bike" , size: "27,5 in" )
 rockrider.photos.attach(io: file_rockrider, filename: 'rockrider.png', content_type: 'image/png')
