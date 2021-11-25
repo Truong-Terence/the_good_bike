@@ -36,18 +36,24 @@
   <div class="mt-5 mb-5">
     <h2>How it works</h2>
       <h6><strong>The good bike helps people to rent bike all over the world</strong></h6>
-      <p class="col-12 col-lg-7 mx-auto">The good bike bike rental and sharing service that provides a platform to connect bike owners with people looking to rent bike around the world. Through our service, owners list their bikes, renters search for a bike in whatever area they want, and complete the rental process easily through our web application</p>
+      <p class="col-12 col-lg-7 mx-auto">The good bike bike rental and sharing service that provides a platform to connect bike owners with people looking to rent bike around the world.</p>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="card-category col-lg-4 col-12 ">
-          <%= link_to 'Find your bike', bikes_path%>
+      <div class="row d-flex justify-content-around">
+        <div class="card-category overflow-hidden text-center col-lg-4 col-12 ">
+          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_ko53b4tp.json"  background="transparent"  speed="1"  style="height: 200px;"  loop  autoplay></lottie-player>
+          <hr>
+          <p>Find your ideal bike for your needs, any type of bike, anywhere near you.</p>
         </div>
-        <div class="card-category col-lg-4 col-12 img">
-          <%= link_to 'Book it', '#' %>
+        <div class="card-category overflow-hidden col-lg-4 col-12 img">
+          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ytg7s6tx.json"  background="transparent"  speed="1"  style="height: 200px;"  loop  autoplay></lottie-player>
+          <hr>
+          <p>Choose your dates of use and reserve it in a few clicks.</p>
         </div>
-        <div class="card-category col-lg-4 col-12 img">
-          <%= link_to 'Ride it', '#' %>
+        <div class="card-category overflow-hidden col-lg-4 col-12 img">
+          <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_lnji2epm.json"  background="transparent"  speed="1"  style="height: 200px;"  loop  autoplay></lottie-player>
+          <hr>
+          <p>Pick up the bike, enjoy it and pay for the service after use.</p>
         </div>
       </div>
     </div>
@@ -67,29 +73,20 @@
     </div>
   </div>
 </div>
+<br>
+<br>
+<br>
 
-<div class="footer d-flex justify-content-around">
-  <div class="container">
-    <div class="row">
-      <div class="logo col-lg-4 col-12 ">
-        <lottie-player class="my-lottie-logo" src="https://assets7.lottiefiles.com/packages/lf20_uvovx5gl.json"  background="transparent"  speed="0.5"  style="height: 150px;" loop autoplay ></lottie-player>
-      </div>
-      <div class="col-lg-4 col-12" id="social-platforms">
-        <h3>Join us on</h3>
-        <a class="btn btn-icon btn-facebook" href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a>
-        <a class="btn btn-icon btn-twitter" href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a>
-        <a class="btn btn-icon btn-instagram" href="#"><i class="fa fa-instagram"></i><span>Instagram</span></a>
-        <a class="btn btn-icon btn-pinterest" href="#"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
-      </div>
-      <div class="rewards col-lg-4 my-3 col-12 text-center">
-        <h3>Our service is multi rewarded</h3>
-        <div class="badges">
-          <p><i class="fas fa-award mr-2"></i>Most rised start up France</p>
-          <p><i class="fas fa-award mr-2"></i>First place, new commer award</p>
-          <p><i class="fas fa-award mr-2"></i>Favorite european application</p>
-        </div>
-      </div>
-    </div>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    dev by Diamond team - <%= Time.now.year %>
   </div>
 </div>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
