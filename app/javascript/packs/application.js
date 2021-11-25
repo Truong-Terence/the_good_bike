@@ -24,8 +24,10 @@ require("channels")
 
                           // External imports
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 // -------Bootstrap-------
 import "bootstrap";
+
 import { initMapbox } from '../plugins/init_mapbox';
 // import { initAutocomplete } from '../plugins/initAutocomplete'; TODO:
 
@@ -34,12 +36,17 @@ import { initTotalPrice } from '../components/date_picker';
 
 // -------MapBox-------
 document.addEventListener('turbolinks:load', () => {
+
+  // Call your functions here, e.g:
+  // initSelect2();
+  initUpdateNavbarOnScroll();
+});
+
   initMapbox();
   initTotalPrice();
  })
 
-
-
 // -------FlatPickr-------
 import { initFlatpickr } from "../plugins/flatpickr";
 initFlatpickr();
+
