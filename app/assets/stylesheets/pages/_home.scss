@@ -31,7 +31,7 @@
   .btn{
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    padding: 19px;
+    padding: 18px;
   }
 }
 
@@ -71,150 +71,31 @@
   }
 }
 
-
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+#map{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-  a{
-    color: white;
-  }
-
-  &:nth-child(1){
-    background-image: asset-url('find.jpg');
-  }
-
-  &:nth-child(2){
-    background-image: asset-url('calendar.jpg');
-  }
-
-  &:nth-child(3){
-    background-image: asset-url('ride.jpg');
-  }
 }
 
 
-
-
-#social-platforms {
-  font-size:1rem;
-  text-align:center;
-  overflow:hidden;
-  a{
-    padding: 0;
-  }
+.footer {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0px 70px;
+  color: rgba(0,0,0,0.3);
 }
-
-/*Pen code from this point on*/
-.btn {
-  clear:both;
-  white-space:nowrap;
-  font-size:.8em;
-  display:inline-block;
-  border-radius:5px;
-  margin:2px;
-  -webkit-transition:all .5s;
-  -moz-transition:all .5s;
-  transition:all .5s;
-  overflow:hidden
+.footer-links {
+  display: flex;
+  align-items: center;
 }
-
-.btn:hover {
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.45);
+.footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
 }
-
-.btn:focus {
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
-}
-
-.btn > span,.btn-icon > i {
-  float:left;
-  padding:13px;
-  -webkit-transition:all .5s;
-  -moz-transition:all .5s;
-  transition:all .5s;
-  line-height:1em
-}
-
-.btn > span {
-  padding:14px 18px 16px;
-  white-space:nowrap;
-  color:#FFF;
-  background:#b8b8b8
-}
-
-.btn:focus > span {
-  background:#9a9a9a
-}
-
-.btn-icon > i {
-  border-radius:5px 0 0 5px;
-  position:relative;
-  width:13px;
-  text-align:center;
-  font-size:1.25em;
-  color:#fff;
-  background:#212121
-}
-
-.btn-icon > i:after {
-  content:"";
-  border:8px solid;
-  border-color:transparent transparent transparent #222;
-  position:absolute;
-  top:13px;
-  right:-15px
-}
-
-.btn-icon:hover > i,.btn-icon:focus > i {
-  color:#FFF
-}
-
-.btn-icon > span {
-  border-radius:0 5px 5px 0
-}
-
-/*Facebook*/
-.btn-facebook:hover > i,.btn-facebook:focus > i {
-  color:#3b5998
-}
-
-.btn-facebook > span {
-  background:#3b5998
-}
-
-/*Twitter*/
-.btn-twitter:hover > i,.btn-twitter:focus > i {
-  color:#55acee
-}
-
-.btn-twitter > span {
-  background:#55acee
-}
-
-/*Instagram*/
-.btn-instagram:hover > i,.btn-instagram:focus > i {
-  color:#55acee
-}
-
-.btn-instagram > span {
-  background:radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
-}
-
-/*Pinterest*/
-.btn-pinterest:hover > i,.btn-pinterest:focus > i {
-  color:#cb2028
-}
-
-.btn-pinterest > span {
-  background:#cb2028
+.footer-links a:hover {
+  opacity: 1;
 }
