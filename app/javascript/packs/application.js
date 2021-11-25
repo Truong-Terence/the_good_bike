@@ -44,9 +44,7 @@ document.addEventListener('turbolinks:load', () => {
 
   initMapbox();
   initTotalPrice();
- })
 
 // -------FlatPickr-------
 import { initFlatpickr } from "../plugins/flatpickr";
 initFlatpickr();
-
