@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 <div class="w-100 content d-flex">
   <div class="col-md-7 content-left d-flex justify-content-center">
     <div class="bike_card shadow">
@@ -39,17 +40,12 @@
 
         <%= simple_form_for [@bike, @bike.bookings.new] do |f| %>
           <div class="form-group">
-            <%= f.input :start_at, class:"form-control" %>
+            <%= f.input :start_at, class:"form-control", name: "dates" %>
             <%= f.input :end_at, class:"form-control" %>
             <%= link_to "Back to Home", bikes_path, class:"btn btn-info btn-sm mt-4"%>
             <%= f.submit "Booking this bike !", class: "btn btn-info btn-sm mt-4"%>
           </div>
         <% end %>
-
-
-
-
-
 
       </div>
     </div>
