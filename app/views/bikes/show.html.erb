@@ -1,16 +1,11 @@
 
 <div class="row justify-content-md-center mt-5">
-  <div class="col-md-7 p-0 d-flex border">
-    <div class="content-img col-md-6">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<div class="w-100 content d-flex">
-  <div class="col-md-7 content-left d-flex justify-content-center">
-    <div class="bike_card shadow">
-      <div class="thumbnail_bike">
+  <div class="col-md-10 p-0 d-flex justify-content-md-center mt-5 position-relative">
+
+    <div class="content-img col-md-5">
+    <%= link_to "< back to index", bikes_path, class: "text-info back_to_index" %>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-
           <div class="carousel-inner">
             <div class="carousel-item active">
               <%= cl_image_tag @bike.photos[0].key, crop: :fill %>
@@ -34,7 +29,7 @@
           </button>
         </div>
     </div>
-    <div class="content-right col-md-6 p-3">
+    <div class="content-right col-md-5 p-3 pl-5">
       <div class="content-name-price d-flex justify-content-between border-bottom">
         <h2><strong><%= @bike.name %></strong></h2>
         <span class="d-flex align-items-end text-info"><h2><strong><%= @bike.price_per_day %>€</strong></h2>&nbsp;<h4>/day</h4></span>
@@ -69,22 +64,20 @@
         </div>
 
       </div>
+      <div class="content-booking border-top mt-5">
+        <h2 class="mt-3">Booking this bike</h2>
 
-      <div class="content-booking border">
-      <div class="bookings_bike border-top p-3 align-items-start justify-content-start d-flex flex-column">
-        <h4>Booking this bike</h4>
 
-        <%= simple_form_for [@bike, @bike.bookings.new] do |f| %>
-          <div class="form-group">
-            <%= f.input :start_at, class:"form-control", name: "dates" %>
-            <%= f.input :end_at, class:"form-control" %>
-            <%= link_to "Back to Home", bikes_path, class:"btn btn-info btn-sm mt-4"%>
-            <%= f.submit "Booking this bike !", class: "btn btn-info btn-sm mt-4"%>
-          </div>
-        <% end %>
-
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+          <%= simple_form_for [@bike, @bike.bookings.new], method: "get" do |f| %>
+            <span class="d-flex justify-content-between">
+            <%= f.input :start_at, as: :string, required: false, input_html: {class: "datepicker", id: "start-date"} %>
+            <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker", id: "end-date"} %>
+            </span>
+            <h3 id="total-price" data-priceperday="<%= @bike.price_per_day %>" class="mt-3 font-weight-bold text-info text-right"></h3>
+            <%= f.button :submit, "Book now !", class: "btn btn-info rounded w-100 mt-3 h-25" %>
+          <% end %>
       </div>
-
     </div>
   </div>
 </div>
