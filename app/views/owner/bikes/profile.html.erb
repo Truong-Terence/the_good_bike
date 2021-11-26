@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <nav class="nav">
+      <nav class="nav my-4">
         <a class="nav-item pill nav-link active" href="#p1" data-toggle="tab">Home</a>
         <%= link_to "My bikes", owner_bikes_path, class: "nav-item pill nav-link" %>
         <%= link_to "My bookings", bookings_path, class: "nav-item pill nav-link" %>
@@ -16,7 +16,6 @@
           <div id="dashboard-infos" class="container">
             <div class="row">
               <ul id="dashboard-infos col">
-                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_vvjhceqy.json"  background="transparent"  speed="1"  style="height: 200px; position: absolute; z-index: -1; right: 500px; bottom: 350px;"  loop  autoplay></lottie-player>
                 <li class="li-profile">First name : <div class="profile-datas"><span><%= current_user.first_name%></span></div></li>
                 <li class="li-profile">Last name : <div class="profile-datas"><span><%= current_user.last_name%></span></div></li>
                 <li class="li-profile">E-mail : <div class="profile-datas"><span><%= current_user.email%></span></div></li>
