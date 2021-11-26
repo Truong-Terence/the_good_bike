@@ -21,7 +21,11 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
+            <%if owner_bike.photos.present?%>
               <%= cl_image_tag owner_bike.photos[0].key, height: 300, width: 400, crop: :fill, class: "img-fluid rounded-start" %>
+            <% else %>
+              <%= image_tag 'no-image-available.png', height: 300, width: 400, crop: :fill, class: "img-fluid rounded-start" %>
+            <% end %>
             </div>
             <div class="col-md-8">
               <div class="card-body">
