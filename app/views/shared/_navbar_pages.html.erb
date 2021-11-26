@@ -7,6 +7,7 @@
       <div class="nav-item dropdown">
         <%= image_tag "https://mystickermania.com/cdn/stickers/cartoons/sticker_5031-512x512.png?t=09102020", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "My profile", profile_owner_bike_path(current_user), class: "dropdown-item" %>
           <%= link_to "My bikes", owner_bikes_path, class: "dropdown-item" %>
           <%= link_to "My bookings", owner_bookings_path, class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -4,6 +4,10 @@ class Owner::BikesController < ApplicationController
     @owner_bike = Bike.new
   end
 
+  def profile
+    @owner = current_user
+  end
+
   def edit
   end
 
