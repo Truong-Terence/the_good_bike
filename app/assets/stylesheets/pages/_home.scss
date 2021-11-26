@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .geo-form {
   width: 100vw;
-  height: 250%;
+  height: 100%;
   background: linear-gradient(rgb(255, 255, 255), rgb(181, 216, 141));
   opacity: 0.2;
   position: absolute;
@@ -9,39 +9,68 @@
   z-index: -1;
 }
 
-.searching-form{
-  background-color: rgba(151, 196, 100, 0.089);
-  border-radius: 50px;
+.navbar-brand{
+  h1{
+    font-family: 'Comfortaa', cursive;
+    color: #b1da86;
+    font-size: 120px;
+  }
 }
 
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.my-lottie-logo{
+  top: 10px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.searching-form {
+  .btn{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    padding: 18px;
+  }
+}
+
+.my-form-input-kind{
+  width: 390px;
+  padding: 30px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+
+}
+
+.my-form-input-address{
+  width: 302px;
+  padding: 30px;
+}
+
+
+.arrow-down{
+  height: 150px;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+#map{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-
-    a{
-      color: white;
-    }
-
-   &:nth-child(1){
-     background-image: asset-url('find.jpg');
-   }
-   &:nth-child(2){
-     background-image: asset-url('calendar.jpg');
-   }
-   &:nth-child(3){
-     background-image: asset-url('ride.jpg');
-   }
-}
-
-h1{
-  font-size: 100px;
 }

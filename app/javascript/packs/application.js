@@ -22,6 +22,7 @@ require("channels")
 
 // External imports
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 // -------Bootstrap-------
 import "bootstrap";
 
@@ -34,9 +35,9 @@ import { initFlatpickr } from "../plugins/flatpickr";
 // -------Date Picker-----
 import { initTotalPrice } from '../components/date_picker';
 
-// -------MapBox----------
 document.addEventListener('turbolinks:load', () => {
+  initUpdateNavbarOnScroll();
   initMapbox();
   initFlatpickr();
   initTotalPrice();
- })
+});

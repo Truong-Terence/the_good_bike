@@ -1,5 +1,6 @@
 class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @bikes = Bike.all
 
@@ -8,7 +9,8 @@ class BikesController < ApplicationController
       {
         lat: bike.latitude,
         lng: bike.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { bike: bike })
+        info_window: render_to_string(partial: "info_window", locals: { bike: bike }),
+        image_url: helpers.asset_url('marker.png')
       }
     end
 

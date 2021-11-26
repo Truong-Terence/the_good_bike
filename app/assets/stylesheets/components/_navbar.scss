@@ -1,28 +1,25 @@
 .navbar-lewagon {
-  justify-content: space-between;
-  background: rgb(255, 255, 255);
+  display: flex;
+  position: sticky;
+  top: 0px;
+  justify-content: end;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+  width: 100vw;
+  height: 95px;
+}
+
+.navbar{
+  padding: 21px 30px 5px 30px;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+  z-index: 10;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
-}
-
-.navbar-brand{
-  display: flex;
-  align-items: center;
-
-  h1{
-    font-family: 'Comfortaa', cursive;
-    color: #b1da86;
-    position: relative;
-    top: 35px;
-    margin-left: 15px;
-  }
-}
-
-.my-lottie-logo {
-  position: relative;
-  top: -52px;
 }
 
 .avatar {
@@ -32,5 +29,15 @@
     cursor: pointer;
     padding: 0px;
     border: solid rgb(160, 160, 160) 2px;
+  }
+}
+
+.navbar-lewagon-pages {
+  background-color: transparent;
+  width: 100vw;
+  height: 45px;
+  a {
+    text-decoration: none;
+    color: #80817F;
   }
 }

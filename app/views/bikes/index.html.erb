@@ -1,15 +1,18 @@
-<div class="row">
+<%= render 'shared/navbar_pages' %>
+<div class="row g-0">
   <div class="container col-6">
-    <div class="my-form col-10">
-      <%= form_tag bikes_path, method: :get do %>
+    <div>
+
+      <div class="my-form col-md-12">
+        <%= form_tag bikes_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "my-form-input form-control",
+          class: "my-form-input form-control col-md-10 col-sm-9",
           placeholder: "Find your bike" %>
-        <%= submit_tag "Search", class: "my-form-button btn btn-info" %>
-      <% end %>
+        <%= submit_tag "Search", class: "my-form-button btn btn-info col-md-2 col-sm-3" %>
+        <% end %>
+
     </div>
-    <div>
       <% @bikes.each do |bike| %>
         <div class="card mb-3">
           <div class="row g-0">
@@ -19,12 +22,12 @@
             <div class="col-md-8">
               <div class="card-body">
                 <div class="d-flex p-1 justify-content-between">
-                  <h5 class="card-title"><%= bike.name %></h5>
-                  <p class="user-name card-text"><small class="text-muted">by <%= bike.user.first_name %> <%= bike.user.last_name.upcase %></small></p>
+                  <h5 class="card-title font-weight-bold"><%= bike.name %></h5>
+                  <p class="user-name card-text"><small class="text-muted"><%= bike.user.first_name %> <%= bike.user.last_name.upcase %>&nbsp;&nbsp;<i class="fas fa-user-alt"></i></small></p>
                 </div>
                 <p class="card-text bike-description"><%= bike.description %></p>
                 <div class="price-card d-flex flex-row-reverse">
-                  <%= link_to "view more", bike_path(bike), class: "btn btn-sm btn-info" %>
+                  <%= link_to "view more", bike_path(bike), class: "btn btn-sm btn-info stretched-link" %>
                   <p class="m-0 pr-3"><%= bike.price_per_day %>€/Day</p>
                 </div>
               </div>
