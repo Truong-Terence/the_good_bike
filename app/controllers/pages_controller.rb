@@ -7,7 +7,8 @@ class PagesController < ApplicationController
     @markers = @bikes.geocoded.map do |bike|
       {
         lat: bike.latitude,
-        lng: bike.longitude
+        lng: bike.longitude,
+        image_url: helpers.asset_url('marker.png')
       }
     end
   end

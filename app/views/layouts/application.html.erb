@@ -15,10 +15,15 @@
   </head>
 
   <body>
-
+    <% if current_page?(root_path) %>
+      <%= render 'shared/navbar' %>
+    <% else %>
+      <%= render 'shared/navbar_pages' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%# <p class="notice"><%= notice %>
     <%# <p class="alert"><%= alert %>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
