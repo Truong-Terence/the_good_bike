@@ -9,8 +9,8 @@
     <div class="tab-content w-75">
       <div class="tab-pane active pb-3 pt-3 grid-card" id="p1">
         <% @bookings.each do |booking| %>
-          <div class="card-booking border">
-            <span><h2 class="p-3"><strong><%= booking.bike.name %></strong></h2></span>
+          <div class="card-booking bg-white">
+            <span class="d-flex justify-content-between p-3 align-items-center border-bottom" ><h2><strong><%= booking.bike.name %></strong></h2><p class="mb-0"><i class="fas fa-undo-alt"></i> <%= (Date.today...booking.end_at).count %> days</p></span>
             <div class="card-booking-img">
               <%= cl_image_tag booking.bike.photos[0].key, crop: :fill %>
             </div>
