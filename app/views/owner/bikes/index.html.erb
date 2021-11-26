@@ -27,11 +27,17 @@
               <div class="card-body">
                 <div class="d-flex p-1 justify-content-between">
                   <h5 class="card-title"><%= owner_bike.name %></h5>
-                  <p class="user-name card-text"><small class="text-muted">by <%= owner_bike.user.first_name %> <%= owner_bike.user.last_name.upcase %></small></p>
+                  <p class="user-name card-text"><small class="text-muted"><%= owner_bike.kind %></small></p>
                 </div>
                 <p class="card-text bike-description"><%= owner_bike.description %></p>
                 <div class="price-card d-flex flex-row-reverse">
                   <p class="m-0 pr-3"><%= owner_bike.price_per_day %>€/Day</p>
+                </div>
+                <div class="text-decoration-none">
+                  <%= link_to '<i class="edit-icon far fa-edit mr-3"></i>'.html_safe, edit_bike_path(owner_bike) %>
+                  <%= link_to bike_path(owner_bike),  method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="delete-icon fas fa-trash-alt"></i>
+                  <% end %>
                 </div>
               </div>
             </div>

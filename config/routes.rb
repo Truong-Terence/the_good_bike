@@ -8,12 +8,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :bikes, only: [:index, :show, :create] do
+  resources :bikes, only: [:index, :show, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:create]
   end
 
   namespace :owner do
-    resources :bikes, only: [:index, :edit, :update, :destroy] do
+    resources :bikes, only: [:index]
       member do
         get :profile
       end
