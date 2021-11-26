@@ -8,7 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -16,30 +15,28 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-                          // External imports
+// External imports
 
 // -------Bootstrap-------
 import "bootstrap";
+
+// -------Mapbox----------
 import { initMapbox } from '../plugins/init_mapbox';
-// import { initAutocomplete } from '../plugins/initAutocomplete'; TODO:
-
-// -------Date Picker-------
-import { initTotalPrice } from '../components/date_picker';
-
-// -------MapBox-------
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-  initTotalPrice();
- })
-
-
 
 // -------FlatPickr-------
 import { initFlatpickr } from "../plugins/flatpickr";
-initFlatpickr();
+
+// -------Date Picker-----
+import { initTotalPrice } from '../components/date_picker';
+
+// -------MapBox----------
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+  initFlatpickr();
+  initTotalPrice();
+ })

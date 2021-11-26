@@ -69,7 +69,7 @@
 
 
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-          <%= simple_form_for [@bike, @bike.bookings.new], method: "get" do |f| %>
+          <%= simple_form_for [@bike, @bike.bookings.new] do |f| %>
             <span class="d-flex justify-content-between">
             <%= f.input :start_at, as: :string, required: false, input_html: {class: "datepicker", id: "start-date"} %>
             <%= f.input :end_at, as: :string, required: false, input_html: {class: "datepicker", id: "end-date"} %>
