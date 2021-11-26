@@ -2,7 +2,7 @@
 
 
   <div>
-      <% @owner_bikes.each do |owner_bike| %>
+      <% @owner_bikes.each.reverse_each do |owner_bike| %>
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
