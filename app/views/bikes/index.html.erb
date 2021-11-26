@@ -6,6 +6,7 @@
         <%= form_tag bikes_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
+          required: true,
           class: "my-form-input form-control col-md-10 col-sm-9",
           placeholder: "Find your bike" %>
         <%= submit_tag "Search", class: "my-form-button btn btn-info col-md-2 col-sm-3" %>
