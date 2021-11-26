@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.all.where(user: current_user)
+
+    @bookings_accepted = @bookings.where(status: "Accepted")
+    @bookings_pending = @bookings.where(status: "Pending")
+    @bookings_canceled = @bookings.where(status: "Canceled")
   end
 
   def new
@@ -23,6 +27,10 @@ class BookingsController < ApplicationController
   end
 
   def cancel
+
+  end
+
+  def update
     @booking = Booking.find(params[:id])
     @booking.status = "Canceled"
     @booking.save!

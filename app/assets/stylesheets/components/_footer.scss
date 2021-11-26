@@ -1,11 +1,16 @@
 .footer {
+  // position: absolute;
+  // bottom: 0;
+  width: 100%;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 50x;
   padding: 0px 70px;
   color: rgba(0,0,0,0.3);
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 .footer-links {
   display: flex;
@@ -17,7 +22,18 @@
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
+  &:hover {
+    opacity: 1;
+  }
 }
-.footer-links a:hover {
-  opacity: 1;
+
+.footer-copyright a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+  &:hover {
+    opacity: 1;
+  }
 }
