@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   namespace :owner do
-    resources :bikes, only: [:index]
+    resources :bikes, only: [:index] do
       member do
         get :profile
       end
