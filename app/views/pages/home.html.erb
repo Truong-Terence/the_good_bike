@@ -13,12 +13,14 @@
         <div>
           <%= text_field_tag :query,
           params[:query],
+          required: false,
           class: "my-form-input-kind form-control",
           placeholder: "Find your bike" %>
         </div>
         <div>
           <%= text_field_tag :query,
           params[:query],
+          required: true,
           class: "my-form-input-address form-control",
           placeholder: "Where do you go ?" %>
         </div>
