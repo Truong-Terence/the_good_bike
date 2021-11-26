@@ -1,5 +1,5 @@
 # The Good Bike !
-[:mag_right:](https://the-good-bike.cleverapps.io)
+[Have a look ! :mag_right:](https://the-good-bike.cleverapps.io)
 
 ## Markeplace made in Le Wagon
 
