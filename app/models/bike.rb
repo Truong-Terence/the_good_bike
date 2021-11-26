@@ -24,6 +24,7 @@ class Bike < ApplicationRecord
     }
 
   KIND = ["Mountain bike", "Electric", "Electric mountain bike", "Road bike", "Dutch bike", "BMX"]
+  STATUS = ["Pending", "Accepted", "Canceled"]
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   validates :kind, inclusion: { in: KIND }, presence: true
