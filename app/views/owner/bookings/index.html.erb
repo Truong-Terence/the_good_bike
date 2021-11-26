@@ -1,22 +1,49 @@
 <div class="row justify-content-md-center">
   <div class="col-md-10 p-0 d-flex flex-column justify-content-md-center align-items-center mt-5 position-relative">
-    <h3 class="pb-3 w-100 border-bottom">All your Bookings</h3>
+    <h3 class="pb-3 w-100 border-bottom">Booking Management</h3>
     <nav class="nav nav-pills pb-3 pt-3 justify-content-start w-100">
-      <a class="nav-item pill nav-link active" href="#p1" data-toggle="tab">Coming Up</a>
-      <a class="nav-item pill nav-link" href="#p2" data-toggle="tab">Pending</a>
+      <a class="nav-item pill nav-link active" href="#p1" data-toggle="tab">To be confirmed</a>
+      <a class="nav-item pill nav-link" href="#p2" data-toggle="tab">Accepted</a>
       <a class="nav-item pill nav-link" href="#p3" data-toggle="tab">Previous</a>
     </nav>
     <div class="tab-content w-75">
 
 
       <div class="tab-pane active pb-3 pt-3 grid-card" id="p1">
-        <% @bookings_accepted.each do |booking| %>
+        <% @owner_bookings_pending.each do |booking| %>
           <div class="card-booking bg-white shadow">
             <div class="p-3 d-flex flex-column align-items-left justify-content-center border-bottom" >
               <h2><strong><%= booking.bike.name %></strong></h2>
               <div class="card-status mt-3">
                 <%= simple_form_for(booking) do |f| %>
                   <div class="d-flex align-items-end">
+                    <%= f.input :status, collection: Booking::STATUS, class:"form-control" %>
+                    <%= f.submit "✓", class: "btn btn-info btn-status"%>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+            <div class="card-booking-img">
+              <%= cl_image_tag booking.bike.photos[0].key, crop: :fill %>
+            </div>
+            <div class="content-info-view border-top p-3">
+              <div class="mb-0 text-info"><i class="fas fa-hourglass-half"></i>  Pending validation</div>
+              <div><i class="fas fa-calendar-day mr-2 mt-3"></i><%= booking.start_at %> to <%= booking.end_at %></div>
+              <div><i class="fas fa-map-marker-alt mr-2 mt-3"></i><%= booking.bike.address %></div>
+              <div><i class="fas fa-at mr-2 mt-3"></i><%= booking.bike.user.email %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="tab-pane pb-3 pt-3 grid-card" id="p2">
+        <% @owner_bookings_accepted.each do |booking| %>
+          <div class="card-booking bg-white shadow">
+            <div class="p-3 d-flex flex-column align-items-left justify-content-center border-bottom" >
+              <h2><strong><%= booking.bike.name %></strong></h2>
+              <div class="card-status mt-3">
+                <%= simple_form_for(booking) do |f| %>
+                  <div class="d-flex align-items-center">
                     <%= f.input :status, collection: Booking::STATUS, class:"form-control" %>
                     <%= f.submit "✓", class: "btn btn-info btn-status"%>
                   </div>
@@ -36,35 +63,8 @@
         <% end %>
       </div>
 
-      <div class="tab-pane pb-3 pt-3 grid-card" id="p2">
-        <% @bookings_pending.each do |booking| %>
-          <div class="card-booking bg-white shadow">
-            <div class="p-3 d-flex flex-column align-items-left justify-content-center border-bottom" >
-              <h2><strong><%= booking.bike.name %></strong></h2>
-              <div class="card-status mt-3">
-                <%= simple_form_for(booking.status)  do |f| %>
-                  <div class="d-flex align-items-end">
-                    <%= f.input :status, collection: Booking::STATUS, class:"form-control" %>
-                    <%= f.submit "✓", class: "btn btn-info btn-status"%>
-                  </div>
-                <% end %>
-              </div>
-            </div>
-            <div class="card-booking-img">
-              <%= cl_image_tag booking.bike.photos[0].key, crop: :fill %>
-            </div>
-            <div class="content-info-view border-top p-3">
-              <div class="mb-0 text-info"><i class="fas fa-hourglass-half"></i> Pending validation</div>
-              <div><i class="fas fa-calendar-day mr-2 mt-3"></i><%= booking.start_at %> to <%= booking.end_at %></div>
-              <div><i class="fas fa-map-marker-alt mr-2 mt-3"></i><%= booking.bike.address %></div>
-              <div><i class="fas fa-at mr-2 mt-3"></i><%= booking.bike.user.email %></div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-
       <div class="tab-pane pb-3 pt-3 grid-card" id="p3">
-        <% @bookings_canceled.each do |booking| %>
+        <% @owner_bookings_canceled.each do |booking| %>
           <div class="card-booking bg-white shadow">
             <div class="p-3 d-flex flex-column align-items-left justify-content-center border-bottom" >
               <h2><strong><%= booking.bike.name %></strong></h2>
