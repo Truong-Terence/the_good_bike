@@ -1,7 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    require 'date'
-    @bookings = Booking.all
+    @bookings = Booking.all.where(user: current_user)
   end
 
   def new

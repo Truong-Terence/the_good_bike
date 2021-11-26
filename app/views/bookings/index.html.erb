@@ -1,39 +1,32 @@
-<%= render 'shared/navbar_pages' %>
-<div class="container border">
-  <h1 class="w-100 text-center">All your booking</h1>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <% if booking.user_id == current_user.id %>
-        <div class="card-product mt-4">
-          <%= cl_image_tag booking.bike.photos[0].key, crop: :fill %>
-          <div class="card-product-infos d-flex justify-content-between align-items-center w-100 h-100">
-            <div class="card-content-left ml-2">
-              <span class="d-flex align-item-center"><h3><strong class="text-info"><%= booking.bike.name %></strong></h3>&nbsp;&nbsp;<p><%= booking.bike.kind %></p></span>
-              <p class="booking_date">To be returned in <strong class="text-success"><%= (Date.today...booking.end_at).count %> days</strong></p>
-              <p><i class="fas fa-calendar-day mr-2"></i><%= booking.start_at %> to <%= booking.end_at %></p>
-              <p><i class="fas fa-map-marker-alt mr-2"></i><%= booking.bike.address %></p>
-              <p><i class="fas fa-at mr-2"></i><%= booking.bike.user.email %></p>
-              <p>
-                <% if booking.status == "Pending" %>
-                <i class="fas fa-hourglass-half mr-2"></i><%= booking.status %>
-                <% elsif booking.status == "Accepted"%>
-                <i class="far fa-check-circle mr-2"></i><%= booking.status %>
-                <% else booking.status == "Canceled"%>
-                <i class="far fa-times-circle mr-2"></i><%= booking.status %>
-                <% end %>
-              </p>
-            </div>
-            <div class="card-content-right h-100 d-flex align-items-center">
-              <% unless booking.status == "Canceled" %>
-              <%= link_to icon('fas', 'times'), cancel_booking_path(booking), class: "btn btn-danger rounded-circle" %>
-              <% else %>
-              <%# TODO: edit update + modif icon %>
-              <%= link_to icon('fas', 'times'), cancel_booking_path(booking), class: "btn btn-success rounded-circle" %>
-              <% end %>
+<div class="row justify-content-md-center mt-5">
+  <div class="col-md-10 p-0 d-flex flex-column justify-content-md-center align-items-center mt-5 position-relative">
+    <h3 class="pb-3 pt-3 w-100 border-bottom">All your Bookings</h3>
+    <nav class="nav nav-pills pb-3 pt-3 justify-content-start w-100">
+      <a class="nav-item pill nav-link active" href="#p1" data-toggle="tab">Cooming Up</a>
+      <a class="nav-item pill nav-link" href="#p2" data-toggle="tab">Pending</a>
+      <a class="nav-item pill nav-link" href="#p3" data-toggle="tab">Previous</a>
+    </nav>
+    <div class="tab-content w-75">
+      <div class="tab-pane active pb-3 pt-3 grid-card" id="p1">
+        <% @bookings.each do |booking| %>
+          <div class="card-booking bg-white">
+            <span class="d-flex justify-content-between p-3 align-items-center border-bottom" ><h2><strong><%= booking.bike.name %></strong></h2><p class="mb-0"><i class="fas fa-undo-alt"></i> <%= (Date.today...booking.end_at).count %> days</p></span>
+            <div class="card-booking-img">
+              <%= cl_image_tag booking.bike.photos[0].key, crop: :fill %>
             </div>
           </div>
+        <% end %>
+      </div>
+      <div class="tab-pane pb-3 pt-3 grid-card" id="p2">
+        <div class="card-booking border">
+          
         </div>
-      <% end %>
-    <% end %>
-  </ul>
+      </div>
+      <div class="tab-pane pb-3 pt-3 grid-card" id="p3">
+        <div class="card-booking border">
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
