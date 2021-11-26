@@ -1,20 +1,5 @@
 <div class="container col-7 mt-2">
-  <%= simple_form_for(@owner_bike) do |f| %>
-    <div class="form-group bg-light p-4">
-      <div class="d-flex justify-content-between">
-        <%= f.input :name, class:"form-control" %>
-        <%= f.input :size, class:"form-control" %>
-        <%= f.input :kind, collection: Bike::KIND, class:"form-control" %>
-      </div>
-      <%= f.input :address, class:"form-control" %>
-      <%= f.input :description, class:"form-control" %>
-      <%= f.input :price_per_day, class:"form-control" %>
-      <div class="d-flex justify-content-between align-items-center">
-        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.submit "Add my bike !", class: "btn btn-info"%>
-      </div>
-    </div>
-  <% end %>
+
 
   <div>
       <% @owner_bikes.each do |owner_bike| %>
@@ -45,4 +30,24 @@
         </div>
       <% end %>
     </div>
+
+    <div class="form-bike">
+    <%= simple_form_for(@owner_bike) do |f| %>
+      <div class="form-group bg-light pt-2 pl-4 pr-4">
+        <h1 class="text-center"><%= "Add a bike" %></h1>
+        <div class="d-flex justify-content-between">
+          <%= f.input :name, class:"form-control" %>
+          <%= f.input :size, class:"form-control" %>
+          <%= f.input :kind, collection: Bike::KIND, class:"form-control" %>
+        </div>
+        <%= f.input :address, class:"form-control" %>
+        <%= f.input :description, class:"form-control" %>
+        <%= f.input :price_per_day, class:"form-control" %>
+        <div class="d-flex justify-content-between align-items-center">
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.submit "Add my bike !", class: "btn btn-info"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

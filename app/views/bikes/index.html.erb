@@ -22,12 +22,15 @@
             <div class="col-md-8">
               <div class="card-body">
                 <div class="d-flex p-1 justify-content-between">
-                  <h5 class="card-title font-weight-bold"><%= bike.name %></h5>
+                  <div class="title-and-kind flex-right">
+                    <h5 class="card-title m-0 font-weight-bold"><%= bike.name %></h5>
+                    <p class="card-title"><small><%= bike.kind %></small></p>
+                  </div>
                   <p class="user-name card-text"><small class="text-muted"><%= bike.user.first_name %> <%= bike.user.last_name.upcase %>&nbsp;&nbsp;<i class="fas fa-user-alt"></i></small></p>
                 </div>
                 <p class="card-text bike-description"><%= bike.description %></p>
                 <div class="price-card d-flex flex-row-reverse">
-                  <%= link_to "view more", bike_path(bike), class: "btn btn-sm btn-info stretched-link" %>
+                  <%= link_to "view more", bike_path(bike), class: "btn btn-sm btn-info" %>
                   <p class="m-0 pr-3"><%= bike.price_per_day %>€/Day</p>
                 </div>
               </div>

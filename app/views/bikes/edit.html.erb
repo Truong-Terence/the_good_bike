@@ -1,16 +1,19 @@
-<%= simple_form_for(@bike) do |f| %>
-  <div class="form-group bg-light p-4">
-    <div class="d-flex justify-content-between">
-      <%= f.input :name, class:"form-control" %>
-      <%= f.input :size, class:"form-control" %>
-      <%= f.input :kind, collection: Bike::KIND, class:"form-control" %>
+<div class="form-edit">
+  <%= simple_form_for(@bike) do |f| %>
+    <div class="form-group bg-light p-4">
+      <h1 class="text-center"><%= "Bike edit" %></h1>
+      <div class="d-flex justify-content-between">
+        <%= f.input :name, class:"form-control" %>
+        <%= f.input :size, class:"form-control" %>
+        <%= f.input :kind, collection: Bike::KIND, class:"form-control" %>
+      </div>
+      <%= f.input :address, class:"form-control" %>
+      <%= f.input :description, class:"form-control" %>
+      <%= f.input :price_per_day, class:"form-control" %>
+      <div class="d-flex justify-content-between align-items-center">
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit "Update my bike !", class: "btn btn-info"%>
+      </div>
     </div>
-    <%= f.input :address, class:"form-control" %>
-    <%= f.input :description, class:"form-control" %>
-    <%= f.input :price_per_day, class:"form-control" %>
-    <div class="d-flex justify-content-between align-items-center">
-      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.submit "Update my bike !", class: "btn btn-info"%>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
