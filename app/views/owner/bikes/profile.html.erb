@@ -1,24 +1,38 @@
-<h2>PROFILE</h2>
-
-<div class="row justify-content-md-center mt-5">
-  <div class="col-md-10 p-0 d-flex flex-column justify-content-md-center align-items-center mt-5 position-relative">
-    <h3 class="pb-3 pt-3 w-100 border-bottom">All your Bookings</h3>
-    <nav class="nav nav-pills pb-3 pt-3 justify-content-start w-100">
-      <a class="nav-item pill nav-link active" href="#p1" data-toggle="tab">Cooming Up</a>
-      <a class="nav-item pill nav-link" href="#p2" data-toggle="tab">Pending</a>
-      <a class="nav-item pill nav-link" href="#p3" data-toggle="tab">Previous</a>
-    </nav>
-    <div class="tab-content w-75">
-      <div class="tab-pane active pb-3 pt-3 grid-card" id="p1">
-
-      </div>
-      <div class="tab-pane pb-3 pt-3 grid-card" id="p2">
-        <div class="card-booking border">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <nav class="nav">
+        <a class="nav-item pill nav-link active" href="#p1" data-toggle="tab">Home</a>
+        <%= link_to "My bikes", owner_bikes_path, class: "nav-item pill nav-link" %>
+        <%= link_to "My bookings", bookings_path, class: "nav-item pill nav-link" %>
+        <%= link_to "Manage my bookings", owner_bookings_path, class: "nav-item pill nav-link" %>
+      </nav>
+      <div class="tab-content">
+        <div class="tab-pane active" id="p1">
+          <h2>
+            <%= image_tag "https://mystickermania.com/cdn/stickers/cartoons/sticker_5031-512x512.png?t=09102020", id: "profile-avatar"%>
+            Welcome <%= current_user.first_name %>
+          </h2>
+          <div id="dashboard-infos" class="container">
+            <div class="row">
+              <ul id="dashboard-infos col">
+                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_vvjhceqy.json"  background="transparent"  speed="1"  style="height: 200px; position: absolute; z-index: -1; right: 500px; bottom: 350px;"  loop  autoplay></lottie-player>
+                <li class="li-profile">First name : <div class="profile-datas"><span><%= current_user.first_name%></span></div></li>
+                <li class="li-profile">Last name : <div class="profile-datas"><span><%= current_user.last_name%></span></div></li>
+                <li class="li-profile">E-mail : <div class="profile-datas"><span><%= current_user.email%></span></div></li>
+                <li class="li-profile">Password : <div class="profile-datas"><span>*******</span></div></li>
+                <li class="li-profile">Profile created : <div class="profile-datas"><span><%= current_user.created_at%></span></div></li>
+              </ul>
+              <div class="col">
+                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_bdsthrsj.json"  background="transparent"  speed="1"  style="height: 400px;"  loop  autoplay></lottie-player>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="p2">
 
         </div>
-      </div>
-      <div class="tab-pane pb-3 pt-3 grid-card" id="p3">
-        <div class="card-booking border">
+        <div class="tab-pane" id="p3">
 
         </div>
       </div>

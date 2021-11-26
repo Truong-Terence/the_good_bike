@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light navbar-expand-sm navbar-lewagon_pages">
+  <div class="container-fluid">
+    <%= link_to "The good bike", root_path, {style:"color:rgb(161, 193, 125); font-size:28px; font-family: 'Comfortaa', cursive;"}%>
+    <div class="d-flex">
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav-link me-2 text-secondary" %>
+        <%= link_to profile_owner_bike_path(current_user) do %>
+        <%= image_tag "https://mystickermania.com/cdn/stickers/cartoons/sticker_5031-512x512.png?t=09102020", class: "avatar" %>
+        <% end %>
+    </div>
+  </div>
+</nav>

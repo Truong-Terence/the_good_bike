@@ -1,0 +1,41 @@
+.pill {
+  color: lightslategray;
+  &:hover {
+    color: #ffb224;
+  }
+}
+
+.pill.active {
+  background-color: #ffb224 !important;
+  color: white;
+}
+
+
+.li-profile {
+  list-style: none !important;
+}
+
+.profile-datas{
+  cursor: text;
+  margin-bottom: 1rem;
+  padding: 3px;
+  height: 30px;
+  width: 500px;
+  border: solid black 1px;
+  background-color: rgb(255, 255, 255);
+}
+
+#profile-avatar {
+  height: 75px;
+  width: 75px;
+  align-items: center;
+}
+
+#dashboard-infos {
+  padding: 1rem;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Comfortaa', cursive;
+}

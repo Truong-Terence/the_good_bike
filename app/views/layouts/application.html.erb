@@ -17,6 +17,8 @@
   <body>
     <% if current_page?(root_path) %>
       <%= render 'shared/navbar' %>
+      <% elsif user_signed_in? && current_page?(profile_owner_bike_path(current_user)) %>
+      <%= render 'shared/navbar_dashboard' %>
     <% else %>
       <%= render 'shared/navbar_pages' %>
     <% end %>
@@ -24,6 +26,9 @@
     <%# <p class="notice"><%= notice %>
     <%# <p class="alert"><%= alert %>
     <%= yield %>
+  <footer>
     <%= render 'shared/footer' %>
+  </footer>
   </body>
 </html>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
