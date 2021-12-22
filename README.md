@@ -1,5 +1,4 @@
 # The Good Bike !
-[Have a look ! :eyes:](https://the-good-bike.cleverapps.io)
 
 ## Markeplace made in Le Wagon
 
@@ -7,6 +6,7 @@ Projet de groupe avec :
  - [Mathias Roux](https://github.com/MathiaSRoux)
  - [Quentin Lourenço](https://github.com/qlourenco)
  - [Clément Le Boulanger](https://github.com/ClementLeBoulanger)
+Premier exercice de groupe, reproduction d'un site Air BNB like en 5 jours.
 
 ### Objectifs
 1. `Setup` : [Notion](https://www.notion.so/Project-The-Good-Bike-c3ba94b93e4a4dfb9c55d8cdf3a5051f)
